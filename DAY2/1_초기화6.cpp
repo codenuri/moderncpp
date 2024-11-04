@@ -25,11 +25,16 @@ int main()
 
 	std::cout << n4 << std::endl; // 0
 
-	Point pt{};	// 1. 사용자가 만든생성자가 있다면 호출.
+//	Point pt{};	// 1. 사용자가 만든생성자가 있다면 호출.
 				// 2. 사용자가 만든생성자가 없거나, = defalut 로 된 생성자
 				//    가 있다면 모든 멤버를 0 으로 
 
+	Point pt;	// x, y 는 쓰레기값
+
 	std::cout << pt.x << std::endl;
+
+	
+	
 }
 
 
