@@ -17,7 +17,7 @@ int main()
 
 	for (; first != last; ++first)
 	{
-		auto& e = *first;
+		auto& n = *first;
 		//-----------------------------
 		std::cout << n << std::endl;
 	}
