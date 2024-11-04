@@ -24,6 +24,17 @@ int main()
 
 	std::cout << b1 << std::endl;
 	std::cout << b2 << std::endl;
+
+	if (noexcept(foo()))
+	{
+		// foo가 예외가 없으므로 사용
+		// 예외 가능성이 있으면 프로그램이 실패할수 있으므녀
+	}
+	else
+	{
+		goo(); // 느리지만, 안전한 함수 사용
+	}
+	// 내일 배우는 "move"가 위개념 사용.
 }
 
 
