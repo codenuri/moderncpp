@@ -8,7 +8,8 @@ public:
 	Meter(int v) : value(v) {}
 };
 
-Meter operator""m(int value)
+// 사용자 정의 "정수형 리터럴" 함수의 인자는 unsigned long long 이어야 합니다.
+Meter operator""m(unsigned long long value)
 {
 	Meter m(value);
 	return m;
