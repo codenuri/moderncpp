@@ -2,6 +2,7 @@
 #include <vector>
 #include <ranges> // C++20 에서 도입되는 다양한 view(시각)들..
 
+
 int main()
 {
 	std::vector<int> v = { 1,2,3,4,5 };
@@ -14,7 +15,8 @@ int main()
 //	std::ranges::reverse_view rv(fv);
 
 	// 아래 코드는 위코드와 동일합니다.(간단한 테크닉으로 만든것)
-	auto rv = v | std::views::take(3)
+	// => operator | 연산자 재정의로 만든것
+	auto rv = v | std::views::take(3) 
 				| std::views::filter([](int n) { return n % 2 == 1; })
 				| std::views::reverse;
 
@@ -28,10 +30,27 @@ int main()
 
 
 
+/*
+struct take_tag
+{
+	int size;
+};
+
+take_tag take(int cnt)
+{
+	take_tag tt;
+	tt.size = cnt;
+	return tt;
+}
+
+template<typename T>
+take_view operator|(T& v, take_tag tt)
+{
+	return take_view(v, tt.size);
+}
 
 
-
-
+*/
 
 
 
