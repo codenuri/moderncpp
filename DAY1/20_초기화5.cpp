@@ -27,6 +27,12 @@ int main()
 							   // std::vector(int) 생성자는
 						       // explicit 라는 의미. 
 
+	// 질문. 아래 코드는 될까요 ? 안될까요 ?
+	std::vector<int> v3 = { 10 }; // copy initialization
+								  // ok.. 에러 아님..
+								  // ???? 왜 ????
+								  // explicit vector(int) 아닌가요 ??
+
 
 
 
