@@ -31,6 +31,9 @@ int main()
 
 template<typename T> void object_set_zero(T* p)
 {
+	// static_assert 는 "C++11 의 type traits" 와 같이 사용되는 경우가 많습니다.
+	// => 4일차(목)에 자세히 설명
+	// 
 	// std::is_polymorphic_v<T> : T 가 가상함수가 있으면 true
 	static_assert(!std::is_polymorphic_v<T>,
 					"error. T has virtual function");
