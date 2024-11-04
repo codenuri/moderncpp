@@ -5,9 +5,21 @@ int main()
 {
 	int n1 = 0;
 
-	auto a1 = 3;
-	auto a2 = 3.4;
+	// auto : 우변에 표현식으로 좌변의 타입을 결정해 달라.
+	//		  컴파일 시간에 결정
+	//		  실행시 오버헤드는 없음. 
+	auto a1 = 3;	// int a1 = 3
+	auto a2 = 3.4;	// double a2 = 3.4
+
+	// auto 는 결코 쉬운 문법이 아닙니다.
+	// => 2일차에 아주 자세히
+	const int c = 10;
+	auto a3 = c; // int ? const int ?
+				// => 답은 int 
+				
 }
+
+
 
 // #1. 빌드 하는 법
 // Ctrl + F5
