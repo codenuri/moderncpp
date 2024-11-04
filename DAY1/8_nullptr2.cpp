@@ -4,8 +4,8 @@
 void foo(int* p) {}
 
 template<typename F, typename ARG>
-void forward_parameter(F f, ARG arg)	// int arg = 0 이됩니다.
-{										// f(arg) 는 에러!!
+void forward_parameter(F f, ARG arg)	// int arg = 0 이됩니다. f(arg) 는 에러!!
+{										// std::nullptr_t arg = nullptr; f(arg) ok
 	f(arg);
 }
 int main()
