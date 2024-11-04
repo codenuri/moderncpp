@@ -41,6 +41,8 @@ template<typename T> void object_set_zero(T* p)
 class Data
 {
 	int data;
+
+	virtual void foo() {}
 };
 int main()
 {
