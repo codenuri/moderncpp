@@ -1,6 +1,7 @@
 ﻿#include <iostream>
 #include <vector>
 
+// range -for 를 사용하려면 "begin, end" 가 있으면 됩니다.
 struct Point3D
 {
 	int x, y, z;
