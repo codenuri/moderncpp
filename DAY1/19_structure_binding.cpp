@@ -49,12 +49,22 @@ int main()
 	std::map<std::string, std::string> m;
 
 	m["mon"] = "월요일";
+	m["tue"] = "화요일";
 
-	// map은 pair를 보관합니다.
-	std::pair<std::string, std::string> p;
-	p.first = "tue";
-	p.second = "화요일";
-	m.insert(p);
+	for (auto& e : m)
+	{
+		// map 은 pair 를 보관하므로
+		// e의 타입은 pair 입니다.
+
+		std::string key = e.first;
+		std::string value = e.second;
+	}
+	// 위 코드를 C++17 로 다시 만들면
+	for (auto& [key, value] : m) // auto& [key, value] = m의요소인 pair
+	{							 // auto& key = pair.first
+								//  auto& value = pair.second
+	}
+
 
 }
 
