@@ -18,7 +18,7 @@ public:
 
 	// C++11 이라면
 	// 생성자 상속으로 하면 편리합니다.
-	using std::list<int>::list;
+//	using std::list<int>::list;
 
 
 	void print() const
