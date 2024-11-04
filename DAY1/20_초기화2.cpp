@@ -19,8 +19,8 @@ int main()
 	int x3[2]{ 1,2 };
 	std::complex<double> c3{ 1, 2 };
 
-	// copy   initialization : = 을 사용한 초기화
-	// direct initialization : = 이 없는 초기화
+	// copy   initialization(복사초기화) : = 을 사용한 초기화
+	// direct initialization(직접초기화) : = 이 없는 초기화
 }
 
 
