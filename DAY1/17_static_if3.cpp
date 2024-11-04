@@ -9,7 +9,7 @@
 // 아래 코드는 컴파일러가 하게 되므로 다양하게 T를 조사할수 있습니다.
 
 template<typename T>
-void foo(T& a)
+void foo(const T& a)
 {
 	// std::is_pointer_v<T> : T가 포인터 인지 조사
 	//						  컴파일 시간에 조사(목요일날 자세히)
