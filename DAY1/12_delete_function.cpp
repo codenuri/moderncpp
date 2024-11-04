@@ -17,4 +17,5 @@ int main()
 	Point p1;
 	Point p2(1, 2);
 	Point p3(p2); // 컴파일러가 만들어주는 복사생성자사용
+				  // 복사 생성자가 삭제되었으므로 error. 
 }
