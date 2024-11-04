@@ -27,4 +27,8 @@ int main()
 	auto p1 = std::begin(v);
 	auto p2 = std::end(v);    // v가 컨테이너 뿐 아니라 배열도 가능
 
+	// #4. C++20 에서 새로운 begin 나왔습니다.
+	// => visual studio 환경설정에서 C++20 으로
+	auto p3 = std::ranges::begin(v);
+	auto p4 = std::ranges::end(v);
 }
