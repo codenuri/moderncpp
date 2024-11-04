@@ -4,7 +4,7 @@
 // assert : 실행시간 표현식의 유효성 조사
 // static_assert : 컴파일시간 표현식의 유효성 조사
 // => 표현식이 반드시 컴파일 시간에 값을 알수 있어야 한다.
-// => "constant expression" => 컴파일 할때 값을 알수 있는 표현식
+// => "constant(iation) expression" => 컴파일 할때 값을 알수 있는 표현식
 // => 변수는 안됨.
 
 static_assert( sizeof(int*) >= 8, "error, not 64bit" );
