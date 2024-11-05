@@ -6,6 +6,11 @@
 template<typename T> void foo(T& a)
 {
 	std::cout << __FUNCSIG__ << std::endl;
+
+	// 주의 : 절대로 RTTI 기술로 타입을 조사하지 마세요
+	// => C++ RTTI 기술은 const, reference 를 출력하지 않습니다.
+	// => 참고, C++26 에서 reflection 라이브러리가 추가될예정
+	std::cout << typeid(T).name() << std::endl;
 }
 
 int main()
