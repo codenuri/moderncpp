@@ -10,7 +10,7 @@ int main()
 	// => expression 이 lvalue 라면 참조 타입
 	// => expression 이 rvalue 라면 값 타입
 
-	if (std::is_lvalue_reference_v< decltype(n * 2)>)
+	if (std::is_lvalue_reference_v< decltype( ( n ) ) >)
 		std::cout << "lvalue\n";
 	else 
 		std::cout << "rvalue(prvalue)\n";
