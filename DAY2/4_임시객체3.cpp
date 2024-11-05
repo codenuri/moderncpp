@@ -10,6 +10,8 @@ public:
 };
 
 // 임시객체와 함수 인자 - 81 page
+// 핵심 : 임시객체는 non-const reference 로는 받을수 없다.
+//       임시객체2.cpp 참고
 void init(Point& pt) { pt.x = 0; pt.y = 0; }
 
 void draw_line(const Point& from, const Point& to) {}
@@ -30,6 +32,10 @@ int main()
 	draw_line(Point(1, 1), Point(10, 10)); 
 				// => 함수 호출이 종료되면 즉시 파괴
 
+	// #3. init : x, y 를 0으로 리셋하는 함수
+	init(&p1); // ok
+
+	init( Point(1, 1) ); // error. 
 
 
 	std::cout << "-----" << std::endl;
