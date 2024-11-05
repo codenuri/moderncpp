@@ -29,11 +29,13 @@ int main()
 	Object o1;
 	Object o2 = o1;				// 항상 복사 생성자
 	Object o3 = std::move(o1);	// 항상 move 생성자
-	Object o3 = std::move_if_noexcept(o2);
+	Object o4 = std::move_if_noexcept(o2);
 						// move 생성자가 예외가 없다면 move생성자 사용
 						// 예외 가능성이 있다면 복사 생성자 사용
 						// (noexcept 가 붙어 있는가?)
 
+	// std::vector 가 버퍼의 요소 복사시에
+	// => "std::move_if_noexcept" 사용
 
 	std::vector<Object> v(5);
 
