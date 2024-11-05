@@ -51,3 +51,53 @@ int main()
 	int(*p1)[3] = &x; // 배열을 가리키는 포인터 가 이모양이므로
 	int(&r1)[3] = x;  // 배열을 가리키는 참조   가 이모양이 되는것
 }
+
+// 참조 : 자동 dereferencing 되는 포인터
+// *p;
+// r가 내부적으로(*p)
+
+// 포인터 : 변경가능, 초기화 없어도되고, null
+// 참조  : 변경불가, 초기화 있어야, null 이 안됨
+int* p1 = &n1;
+p1 = &n2;
+p1 = nullptr;
+
+int& r1 = n1; // r1은 평생 n1만.!!
+r1 = nullptr; // error
+int& r2; // error
+
+void foo(int* p)
+{
+	if (p != nullptr) {}
+}
+
+void foo(int& r)
+{
+	// r은 거의 안전.
+	r 
+}
+/*
+int* p = new int;
+
+int& r = *p;
+delete p;
+
+new 타입;
+
+new int[3]
+void foo(int a, double);
+// foo 타입 : void (int, double);  함수 타입
+// foo 타입 : void (*)(int, double);  함수포인타입
+
+void( *p)(int, double);
+
+
+typedef void(*PF)();  // 함수 포인터 타입
+typedef void F();     // 함수 타입
+
+F* f; // 함수 포인터
+
+int y[3][2]; => 타입 int[3][2]
+
+int[3][2] y
+*/
