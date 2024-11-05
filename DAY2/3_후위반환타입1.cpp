@@ -19,3 +19,11 @@ int main()
 {
 	square(3);
 }
+
+// C, C#, Java : 이름앞에 반환 타입 표기
+// swift, rust, python : 이름뒤에 반환 타입 표기
+
+// 파이썬
+//def add(x, y):	// 보통 이렇게 하지만
+//def add(x : int, y : int) -> int // 이렇게 해도 됩니다.
+								// annotation 문법
