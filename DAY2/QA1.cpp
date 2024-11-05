@@ -15,4 +15,13 @@ int main()
 	f1(x);
 	f2(x);
 }
-// 
+// godbolt.org
+
+// 복사 생성자가 있거나, 크기가 8(12)바이트 이상 되는 타입
+// => const & 권장
+
+// 복사생성자가 없고, 크기가 작은 타입 
+// => call by value
+// => primitive type, iterator, std::initializer_list
+// => range 의 타양한 view 들..
+// => std::string_view
