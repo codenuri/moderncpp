@@ -26,6 +26,10 @@ int main()
 	draw_line(p1, p2);
 
 
+	// #2. 임시 객체 형태로 전달
+	draw_line(Point(1, 1), Point(10, 10)); 
+				// => 함수 호출이 종료되면 즉시 파괴
+
 
 
 	std::cout << "-----" << std::endl;
