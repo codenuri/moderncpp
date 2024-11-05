@@ -3,8 +3,15 @@
 // => 함수 인자가 가진 "const, volatile, reference" 속성을 모두 제거후 타입결정
 template<typename T> void foo(T a)
 {
-	a = 100;
+	// T 의 타입을 확인하는 방법 
+	// #1. golbolt.org 에서 확인 => 가장 권장.. 
+	// #2. 생성된 함수 이름 출력
+	// __func__ : 함수이름을 가진 표준 매크로
+	// __FUNCSIG__ : signature 를 포함한 함수이름 (VS 전용)
+	// __PRETTY_FUNCTION__ : signature 를 포함한 함수이름 (G++ 전용)
+	std::cout << __FUNCSIG__ << std::endl;
 }
+
 int main()
 {
 	// 사용자가 타입을 전달하면
