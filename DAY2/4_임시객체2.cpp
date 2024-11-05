@@ -31,6 +31,14 @@ int main()
 
 	// #4. 임시객체를 const 참조로 가리킬수 있다. 핵심
 	const Point& cr = Point(1, 2); // ok
+					// => 이순간 임시객체의 수명은 cr의 수명으로 연장됩니다.
+					// => life-time extension 이라는 개념
+
+	// #5. C++11 을 만들때 "상수성없이 임시객체를 가리키고 싶었습니다."
+	// => move, perfect forwarding 을 위해서
+	// => 그래서 새로운 참조를 만들게 됩니다.
+	Point&& rr = Point(1, 2);	// rvalue referencee
+								
 }
 
 
