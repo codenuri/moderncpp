@@ -21,4 +21,9 @@ int main()
 	const std::string& s5 = Max(std::string("ab"), std::string("ef"));
 
 	// s5를 사용해도 안전할까요 ?
+	// => 임시객체의 수명연장은 최초 const& 에 의해서만 가능합니다.
+	// => Max 호출 종료후에는 임시객체는 모두 파괴 됩니다.
+	// => s5 는 dangling 입니다.
+
+	// cppreference.com 에서 std::max 검색
 }
