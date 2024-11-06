@@ -22,7 +22,7 @@ private:
 
 int& foo(int a, double d, int& n) 
 { 
-	for (int n = 0; i < 20; i++)
+	for (int i = 0; i < 20; i++)
 	{
 		std::cout << "foo : " << i << std::endl;
 	}
