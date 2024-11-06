@@ -33,7 +33,7 @@ int main()
 
 
 	// 단 한번만 사용한다면 "임시객체 형태"로 하면 편리합니다.
-	auto p3 = std::find_if(v.begin(), v.end(), IsDivide(k) );
+	auto p3 = std::find_if(v.begin(), v.end(), IsDivide{ k } );
 						// => IsDivide(k) 
 						// => 단항함수 + k 값을 같이 전달하는 의미
 
