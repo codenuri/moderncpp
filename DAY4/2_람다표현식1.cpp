@@ -24,7 +24,12 @@ int main()
 
 
 	// #4. C++11 부터 람다 표현식 사용가능
-	std::sort(v.begin(), v.end(), );
+
+	// => 익명의 함수를 만드는 문법
+	// => 함수, 함수 객체가 필요 한 위치에, 함수 구현 자체를 전달하는 문법
+	// [] : lambda introducer
+	//      람다표현식이 시작됨을 알리는 기호
+	std::sort(v.begin(), v.end(), [](int a, int b) { return a < b; } );
 }
 
 
