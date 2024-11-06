@@ -27,7 +27,6 @@ int main()
 	std::sort(x, x+10, cmp2); // sort(int*, int*, bool(*)(int, int)) 인 함수를생성
 
 
-
 	// #2. 비교 정책으로 함수객체를 사용하는 경우
 
 	// 장점 : 비교정책의 인라인 치환이 가능하다. 빠르다.
@@ -41,3 +40,14 @@ int main()
 	std::sort(x, x+10, f2); // sort(int*, int*, Greater) 인 함수 생성
 
 }
+
+/*
+// C#, java
+bool max<T>(T a, T b) 
+{
+	return a < b; //C#, java : error. T 타입이 < 된다는 보장이 없다.
+				  // C++     : 일단 모두 허용
+					//        max(int, int) 보내면 문제 없고
+					//       max(point, point)인데, < 안된다면 그때 에러
+}
+*/
