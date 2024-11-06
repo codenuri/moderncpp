@@ -25,7 +25,9 @@ public:
 	}
 
 
-
+	// move 생성자에서는 "사용자정의타입으로 되어 있는 모든 멤버 데이타는
+	// std::move 로 옮겨야 합니다.
+	// primitive type 의 멤버 데이타는 std::move 를 사용해도 되고 안해도 됩니다.
 	Cat(Cat&& c) noexcept 
 //		: age(c.age), name(c.name), address(c.address) // bad. string의 복사 생성자
 		: age(c.age), name(c.name), address(std::move(c.address)) // good. string의 move생성자
