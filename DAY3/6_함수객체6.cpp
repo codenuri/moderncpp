@@ -11,10 +11,28 @@
 struct Less    { inline bool operator()(int a, int b) const { return a < b; } };
 struct Greater { inline bool operator()(int a, int b) const { return a > b; } };
 
+//======================================================
+// 비교 정책을 교체할수 있는데, 
+// 비교 정책 함수의 인라인 치환도 가능한 Sort
+// => STL 의 설계 원리
+// => 함수객체 + 템플릿으로 만드는 기술
+template<typename T>
+void Sort(int* x, int sz, T cmp)
+{
+	for (int i = 0; i < sz - 1; i++)
+	{
+		for (int j = i + 1; j < sz; j++)
+		{
+			if (cmp(x[i], x[j]) == true)
+				std::swap(x[i], x[j]);
+		}
+	}
+}
+
 int main()
 {
 	int x[] = { 1,3,5,7,9,2,4,6,8,10 };
 
-	Less    f1; f1(5, 3);
-	Greater f2; f2(5, 3);
+	Less    f1; f1(5, 3); Sort(x, 10, f1); // ok
+	Greater f2; f2(5, 3); Sort(x, 10, f2); // ok
 }
