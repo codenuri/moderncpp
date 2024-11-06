@@ -50,6 +50,8 @@ int main()
 	p.set(std::move(name), addr);
 	p.set(name,			   std::move(addr));
 	p.set(std::move(name), std::move(addr));
+
+	std::pair<int, double> p(1, 3.4);
 }
 
 
