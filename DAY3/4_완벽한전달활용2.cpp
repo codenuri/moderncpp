@@ -30,7 +30,9 @@ int main()
 	// #2. std::make_shared 사용
 	// 1. sizeof(Point) + sizeof(control block) 을 한번에 할당
 	// 2. 인자로 받은 값으로 Point 부분의 생성자 호출
+	// 3. std::shared_ptr 를 생성해서 반환
 	std::shared_ptr<Point> sp2 = std::make_shared<Point>(1, 2);
+											//     타입   생성자인자
 }
 
 
