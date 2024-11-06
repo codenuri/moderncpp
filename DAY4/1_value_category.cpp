@@ -22,7 +22,15 @@ int main()
 	Object{};	// 임시객체, rvalue ( prvalue)
 	static_cast<Object&&>(obj); // rvalue( xvalue, eXpire value)
 
-	static_cast<Object>(obj);
+	static_cast<Object>(obj);	// 값 캐스팅하면
+								// obj 를 복사한 임시객체가 생성됩니다.
+								// "prvalue" 입니다.
+
+	LOG_VALUE_CATEGORY(obj);
+	LOG_VALUE_CATEGORY(Object{});
+	LOG_VALUE_CATEGORY(static_cast<Object&&>(obj));
+	LOG_VALUE_CATEGORY(std::move(obj));
+	LOG_VALUE_CATEGORY(static_cast<Object>(obj));
 }
 
 // lvalue
