@@ -41,6 +41,11 @@ int main()
 
 	// static_cast<int&&>(r2)
 	// => r2가 이미 int&& 타입인데 ???  다시 int&& 타입으로 캐스팅 ??
+	// => cppreference.com 에서 static_cast 검색해 보세요
+
+	// static_cast<타입&&> 는 
+	// => 타입캐스팅이 아닌
+	// => value 속성를 변경하는 것 ( lvalue => rvalue(정확히는 xvalue))
 }
 
 
