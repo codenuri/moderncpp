@@ -69,10 +69,20 @@ int main()
 	p.set(std::move(name), addr);
 	p.set(name, std::move(addr));
 	p.set(std::move(name), std::move(addr));
+
+	std::pair<int, double> p(1, 3.4);
 }
 
-
-
+/*
+template <class _Other1, class _Other2,
+	enable_if_t<conjunction_v<is_constructible<_Ty1, _Other1>, is_constructible<_Ty2, _Other2>>, int> = 0>
+constexpr explicit(!conjunction_v<is_convertible<_Other1, _Ty1>, is_convertible<_Other2, _Ty2>>)
+	
+	pair(_Other1&& _Val1, _Other2&& _Val2) noexcept    (	is_nothrow_constructible_v<_Ty1, _Other1>&& is_nothrow_constructible_v<_Ty2, _Other2>) // strengthened
+	
+	: first(_STD forward<_Other1>(_Val1)), second(_STD forward<_Other2>(_Val2)) {
+}
+*/
 
 
 
