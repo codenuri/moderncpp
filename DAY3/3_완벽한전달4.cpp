@@ -40,6 +40,7 @@ int main()
 	chronometry(goo, n);	// T = int&     T&& = int& && => int&
 							// chronometry( 함수포인터, int& )
 							// => static_cast<  int&  > (arg)
+							// => 필요없는 캐스팅이지만 있어도 문제 없다
 
 }
 
