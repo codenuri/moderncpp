@@ -20,6 +20,7 @@ int main()
 {
 	hoo(10); // ok
 	chronometry(hoo, 10); // error
+						  // 원인과 해결책은 다음소스에서.. 
 
 	int n = 10;
 	chrometry(foo, 10); 
