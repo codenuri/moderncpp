@@ -37,4 +37,22 @@ int main()
 	std::cout << "-----" << std::endl;
 }
 
+// 결국 emplace_back 은 "완벽한 전달"로 만들어져 있습니다.
+// => 아래 주석 참고
+// main					emplace_back		Point(int, int)
+// emplace_back(1,2)=====> 1, 2 
+//						new Point(1,2) ============>
 
+// vector에 요소 를 삽입할때
+// vector<primitive_type> 이라면
+// => push_xxx 사용하면 됩니다.
+
+// vector<user type*> 라도 
+// => push_xxx 사용하면 됩니다.
+
+// vector<user type> 이라면 
+// => push_xxx 보다는 emplace_xxx 를 고려하세요
+
+// push_back => emplace_back
+// push_front => emplace_front (vector 는 없지만 list 에는 있음)
+// insert     => emplace
