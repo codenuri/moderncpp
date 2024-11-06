@@ -50,3 +50,12 @@ int main()
 	        // 표준에서는 T=int 로 결정
 			// 최종함수 는 f4(int&& a)
 }
+
+void f1(T a) {}
+void f2(T& a) {}
+void f3(T&& a) {}
+
+int n = 10;
+f1(n); // T= int
+f2(n); // T= int
+f3(n); // T= int&   <== 이경우만 이렇게!!
