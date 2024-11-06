@@ -33,13 +33,13 @@ int main()
 	// 아래 코드 결과로 
 	// 1. 생성된 함수 모양
 	// 2. 캐스팅 코드 를 예측해 보세요
-	chronometry(foo, 10);	// T = ?     T&& = 	?
-							// chronometry( 함수포인터,   ? )
-							// => static_cast< ? > 
+	chronometry(foo, 10);	// T = int     T&& = int&&
+							// chronometry( 함수포인터, int&& arg )
+							// => static_cast< int&& >(arg) 
 
-	chronometry(goo, n);	// T = ?     T&& = 	?
-							// chronometry( 함수포인터,   ? )
-							// => static_cast< ? > 
+	chronometry(goo, n);	// T = int&     T&& = int& && => int&
+							// chronometry( 함수포인터, int& )
+							// => static_cast<  int&  > (arg)
 
 }
 
