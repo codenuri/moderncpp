@@ -15,6 +15,7 @@ public:
 //	void set_name(const std::string& n) { name = n; }
 //	void set_name(std::string&& n) { name = std::move(n); }
 
+
 	// 방법 #2. T&& 사용.
 	template<typename T>
 	void set_name(T&& n)
@@ -24,6 +25,16 @@ public:
 		name = std::forward<T>(n);	// 3. lvalue 를 보내면 lvalue 캐스팅(복사)
 									//    rvalue 를 보내면 rvalue 캐스팅(이동)
 	}
+
+	// 방법 #1. set_name(const std::string& n) 이 함수가
+	// => lvalue, const lvalue 를 모두 해결한다.
+
+	// 방법 #2 는
+	// => set_name(std::string& n) 도 생성하고
+	// => set_name(const std::string& n) 도 생성
+
+
+	// 그래서 보통, 방법 #1 을 권장합니다.
 };
 
 int main()
