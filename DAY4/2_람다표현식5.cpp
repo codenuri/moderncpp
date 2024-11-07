@@ -16,6 +16,13 @@ int main()
 
 	std::cout << typeid(f1).name() << std::endl;
 	std::cout << typeid(f2).name() << std::endl;
+
+
+	// 이미 람다표현식으로 초기화된 변수에 다른 람다표현식담기
+	// => error
+	// => 타입이 다릅니다.
+	// => 람다표현식으로 초기화된 변수에 다른 람다표현식 담을수 없습니다.
+	f2 = [](int a, int b) { return a + b; };
 }
 
 
