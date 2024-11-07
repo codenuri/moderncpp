@@ -5,6 +5,8 @@
 void foo(auto n) {}		// template<typename T>
 						// void foo(T n) {}
 
+// auto add(auto a, auto b) { return a + b; }
+
 int main()
 {
 	// generic lambda
