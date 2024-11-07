@@ -7,8 +7,18 @@
 template<typename T>
 concept container = requires(T & c)
 {
-	c.begin();
-	c.end();
+//	c.begin();
+//	c.end();
+
+//	std::begin(c);
+//	std::end(c);
+
+	{ std::begin(c) } -> std::input_iterator;
+	{ std::end(c) } -> std::input_iterator;
+
+	// std::input_iterator<T> : 표준에서 이미 제공하는 컨셉
+	//							T가 반복자라면 true
+	//							위에 사용시에는 <> 인자 없이!!
 };
 
 template<typename T>
@@ -28,9 +38,21 @@ void foo(const T& arg)
 	std::cout << b2 << std::endl;
 }
 
+class A
+{
+public:
+	void begin() {}
+	void end() {}
+};
 
 int main()
 {
 	std::vector<int> v = { 1,2,3 };
 	foo(v);
+
+	int x[3] = { 1,2,3 };
+	foo(x);
+
+	A a;
+	foo(a);
 }
