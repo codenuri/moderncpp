@@ -23,9 +23,10 @@ template<typename T>
 void print_first_element(T& v)
 {
 	// T : std::list<double>
-	// ?? : double
+	// 
+	// T::value_type => std::list<double>::value_type => double
 
-	? n = v.front();
+	typename T::value_type n = v.front();
 
 	std::cout << n << std::endl;
 }
@@ -52,4 +53,25 @@ public:
 };
 
 std::list<int> s = { 1,2,3 };
-std::list<int>::value_type n = s.front();
+std::list<int>::value_type n = s.front(); // int n = s.front()
+
+// cppreference.com 에서 std::list 검색
+
+// STL은
+// "멤버 함수", "멤버 변수" 외에
+// "멤버 타입" 이라는 개념이 있습니다.
+/*
+template<typename T>
+class List
+{
+	// 멤버 타입
+	using value_type = T;
+	using iterator = _list_iterator;
+	using size_type = std::size_t;
+
+	// 멤버 데이타
+
+	// 멤버 함수
+
+};
+*/
