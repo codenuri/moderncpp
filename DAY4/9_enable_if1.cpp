@@ -8,7 +8,13 @@ template<bool, typename T = void > struct enable_if
 
 template<typename T> struct enable_if<false, T> 
 {
+	// 핵심 : false 부분특수화 버전은 ::type 멤버가 없다
 };
+
+// 사용법 
+// enable_if<bool_value, 타입> 인데
+// enable_if<bool_value>       타입 생략가능. 생략시(void)
+
 
 int main()
 {
