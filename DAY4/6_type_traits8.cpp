@@ -22,9 +22,23 @@ T&& xmove(T& obj)
 // T&& : lvalue, rvalue 모두 받겠다는 것
 
 template<typename T>
-T&& xmove(T&& obj)
+constexpr std::remove_reference_t<T>&& xmove(T&& obj) noexcept
 {
-	return static_cast<T&&>(obj);
+	// T&& : forwaring reference
+	// 인자로 lvalue(o2) 가 오면 T = Object&, T&& = Object& 
+	// 따라서, 아래 캐스팅은 lvalue 캐스팅입니다.
+	//return static_cast<T&&>(obj);
+	
+	// 위 캐스팅은
+	// 인자로 rvalue 가 오면(lvalue로 변경되었던것을)다시 rvalue 로
+	// 인자로 lvalue 가 오면(필요없지만 )           다시 lvalue 로
+	// 즉, std::forward<T>(obj) 의 구현 입니다.
+
+
+	// 그런데, move 는 "항상 rvalue 캐스팅"이 목표 입니다.
+
+	return static_cast<std::remove_reference_t<T> &&>(obj);
+	
 }
 
 
