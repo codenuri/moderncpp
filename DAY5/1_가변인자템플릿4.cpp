@@ -17,7 +17,7 @@ template<typename ... Types> void foo(Types ... args)
 
 	goo(args...);		// goo(e1, e2, e3)
 
-	goo((++args)...);	// goo(++e1, ++e2, ++e3)
+	goo((++args)...);	// goo((++e1), (++e2), (++e3))
 						// ()없어도 됨 "goo(++args...)"
 
 //	goo(hoo(args...));	// goo(hoo(e1, e2, e3)) 의미 인데 
