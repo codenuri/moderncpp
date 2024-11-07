@@ -8,7 +8,6 @@
 template<typename T>
 using remove_pointer_t = typename std::remove_pointer<T>::type;
 
-
 template<typename T> void foo(T a)
 {
 	// #2. 조사하려면
@@ -19,6 +18,11 @@ template<typename T> void foo(T a)
 	// #3. 변형 타입을 얻으려면
 	typename std::remove_pointer<T>::type n1;  // C++11
 	remove_pointer_t<T> n2; // 위와 완전히 동일 // C++14
+
+
+
+
+	
 }
 
 
