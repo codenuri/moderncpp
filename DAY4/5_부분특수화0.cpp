@@ -24,8 +24,12 @@ template<typename T> void foo(T a)
 	// => "이름" 을 무조건 "값"으로 해석	
 
 	T::data * p1;	// ok. 곱하기 의미인데, p1은 전역변수로 존재
-	T::DWORD* p2;	// error.곱하기 의미인데, p2가 없다.
+//	T::DWORD* p2;	// error.곱하기 의미인데, p2가 없다.
 	
+	typename T::DWORD* p2;
+					// dependent name 인 "DWORD" 를
+					// 값이 아닌 타입의 이름으로 해석해달라.
+					// C++98 문법(C++ 처음부터 있던 문법)
 }
 int main()
 {
