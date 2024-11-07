@@ -1,6 +1,13 @@
 ﻿#include <iostream>
 #include <type_traits>
 
+// Type traits 기술
+// => 템플릿 인자 "T"에 대한 다양한 특성을 조사하는 기술
+// => 대부분 "부분 특수화" 기술로 구현되고..
+// => C++11 에 정식 표준으로 채택.
+
+
+
 // 템플릿 인자 T가 포인터 인지 조사하는 기술
 
 template<typename T> struct is_pointer
@@ -18,8 +25,6 @@ template<typename T> struct is_pointer<T*>
 //	enum { value = true };
 	static constexpr bool value = true;
 };
-
-
 
 template<typename T> void foo(const T& a)
 {
