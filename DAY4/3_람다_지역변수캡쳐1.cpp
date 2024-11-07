@@ -19,6 +19,20 @@ int main()
 	// => "mutable lambda"로 해야 쓰기 가능
 //	auto f3 = [v1, v2](int a) { v1 = 100; return a + v1 + v2; }; // error
 	auto f3 = [v1, v2](int a) mutable { v1 = 100; return a + v1 + v2; }; // ok
+
+
+	// 지역변수 캡쳐의 원리
+	// => 컴파일러가 만든 클래스에 멤버 데이타가 추가된것
+	class CompilerGeneratedName
+	{
+	public:
+		inline auto operator()(int a) const
+		{
+			v1 = 100;
+			return a + v1 + v2;
+		}
+	};
+	auto f3 = CompilerGeneratedName();
 }
 
 
