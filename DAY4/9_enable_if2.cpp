@@ -14,6 +14,7 @@ template<typename T> T gcd(T a, T b)
 double gcd(double, double)
 {
 	std::cout << "double\n";
+	return 0;
 }
 
 int main()
