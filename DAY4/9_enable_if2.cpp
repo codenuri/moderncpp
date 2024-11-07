@@ -19,6 +19,14 @@ double gcd(double, double)
 
 int main()
 {
-	gcd(6, 9);
-	gcd(3.1,  5.4);
+	gcd(6, 9);			// T
+	gcd(3.1,  5.4);		// double
+
+	gcd(3.1f, 5.4f);	// T... 그런데, 정수가 아니므로 error
 }
+
+// static_assert : 조건을 만족하지 않으면 에러!!
+
+// 조건을 만족하지 않을때, 에러가 아닌 후보에서 제외 할수 없을까 ?
+// 그렇다면
+// "gcd(3.1f, 5.4f)" 가 gcd(double)로 연결 될수 있다
