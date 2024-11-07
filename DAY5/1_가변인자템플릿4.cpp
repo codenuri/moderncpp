@@ -20,7 +20,12 @@ template<typename ... Types> void foo(Types ... args)
 	goo((++args)...);	// goo(++e1, ++e2, ++e3)
 						// ()없어도 됨 "goo(++args...)"
 
-	goo(hoo(args...));
+//	goo(hoo(args...));	// goo(hoo(e1, e2, e3)) 의미 인데 
+						// hoo 는 인자가 한개인 함수 이므로 error
+
+	goo(hoo(args)...);	// goo(hoo(e1), hoo(e2), hoo(e3))
+
+	// 핵심 : 위 코드를 통해서 ... 의 위치와 차이점을 알아 두세요
 }
 
 
