@@ -27,6 +27,10 @@ int main()
 	std::cout << v1 << std::endl; // 10
 
 
+	std::cout << sizeof(f3) << std::endl; // 8
+
+
+
 	/*
 	// 지역변수 캡쳐의 원리
 	// => 컴파일러가 만든 클래스에 멤버 데이타가 추가된것
