@@ -10,6 +10,10 @@ int main()
 	// return 문장이 2개이상이고, 서로 다른 타입일때만
 	// 표기하면 됩니다. 
 
-	auto f2 = [](int a, double b) { if (a == 0) return a; return b; };
+	// => 아래 코드는 에러 입니다.
+//	auto f2 = [](int a, double b) { if (a == 0) return a; return b; };
+
+	// 아래처럼 반환타입 표기하면 에러 아닙니다.
+	auto f2 = [](int a, double b) -> double { if (a == 0) return a; return b; };
 }
 
