@@ -10,9 +10,16 @@ int main()
 
 	std::sort(v.begin(), v.end(), [](int a, int b) { return a < b; });
 
-	// 위 한줄을 컴파일러가 아래 처럼 변경합니다.
+	// 람다 표현식
+	// => "함수객체"를 만들어 달라는 요청. 
+	// lambda expression 의 최종 결과 : 임시객체, prvalue
+	
+	// 클로져(Closure)
+	// => 람다표현식이 만드는 임시객체
 
-	class CompilerGeneratedName
+	// 위 한줄을 컴파일러가 아래 처럼 변경합니다.
+	
+	class CompilerGeneratedName  // ( ClosureType )
 	{
 	public:
 		inline auto operator()(int a, int b) const
@@ -20,7 +27,6 @@ int main()
 			return a < b;
 		}
 	};
-
 	std::sort(v.begin(), v.end(), CompilerGeneratedName{} );
 
 }
