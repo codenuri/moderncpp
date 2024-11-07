@@ -12,12 +12,18 @@ void foo(double) {}
 // void goo(가상함수가없는클래스들) {}
 
 template<typename T>
-void goo(T a)
+
+//std::enable_if_t<조건, 리턴타입>
+//std::enable_if_t<std::is_polymorphic_v<T>, void>
+std::enable_if_t< std::is_polymorphic_v<T> >  // 타입생략시 void
+goo(T a)
 {
 	std::cout << "가상 함수 있는 타입\n";
 }
+
 template<typename T>
-void goo(T a)
+std::enable_if_t< !std::is_polymorphic_v<T> >
+goo(T a)
 {
 	std::cout << "가상 함수 없는 타입\n";
 }
