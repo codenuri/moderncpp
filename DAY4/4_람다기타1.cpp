@@ -1,4 +1,6 @@
-﻿// 7_람다기타1 - 150
+﻿#include <iostream>
+
+// 7_람다기타1 - 150
 class Test
 {
 	int data = 0;
