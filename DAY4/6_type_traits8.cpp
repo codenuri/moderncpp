@@ -22,7 +22,7 @@ T&& xmove(T& obj)
 // T&& : lvalue, rvalue 모두 받겠다는 것
 
 template<typename T>
-T&& xmove(T& obj)
+T&& xmove(T&& obj)
 {
 	return static_cast<T&&>(obj);
 }
