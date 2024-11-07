@@ -7,7 +7,13 @@
 template<typename T> T gcd(T a, T b)
 {
 	static_assert(std::is_integral_v<T>, "error, T is not integer");
+
 	return 0;
+}
+
+double gcd(double, double)
+{
+	std::cout << "double\n";
 }
 
 int main()
