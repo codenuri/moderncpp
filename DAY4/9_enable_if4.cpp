@@ -28,7 +28,12 @@ goo(T a)
 	std::cout << "가상 함수 없는 타입\n";
 }
 
+class A { virtual void foo() {} };
+
 int main()
 {
 	goo(3); // int 는 가상함수 없음
+	A a;
+	goo(a);
+		
 }
