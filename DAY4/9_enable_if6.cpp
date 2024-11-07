@@ -16,7 +16,10 @@ public:
 
 	// 방법 #2. T&& 사용.
 	template<typename T>
-	void set_name(T&& n)
+	
+	std::enable_if_t< std::is_convertible_v<T, std::string> >
+	
+	set_name(T&& n)
 	{
 		name = std::forward<T>(n);	
 	}
@@ -29,6 +32,13 @@ int main()
 
 	p.set_name(3.4);				
 				// name = 3.4(double) 의 코드에서 에러
+
+	// string 에 double 을 대입할수 있지만, 
+	//           double 로 생성할수 없다.
+//	std::string s;
+//	s = 3.4; // ok
+
+//	std::string s2(3.4); // error
 }
 
 
