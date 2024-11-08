@@ -33,6 +33,14 @@ public:
 	}
 	*/
 	// 아래 처럼 하면 2개를 자동생성할수 있습니다.
+	// "this 의 타입(T)" 가 멤버 함수 호출할때
+	// => 객체의 종류에 따라 추론될수 있습니다.
+	// => obj.get()  :  T= Point 추론
+	// => cobj.get() :  T= const Point 추론
+
+	// this 의 타입이 추론될수 있다고 해서.. 이 기술의 별명이
+	// "deducing this" ( this 추론 )
+
 	template<typename T>
 	std::conditional_t< std::is_const_v<T>, const int&, int&>
 	get(this T& self)
