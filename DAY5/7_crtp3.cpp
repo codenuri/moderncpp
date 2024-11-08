@@ -4,6 +4,13 @@
 // => 템플릿이 아닌 기반 클래스를 만들어서 제공해라
 // => "thin template" 또는 "template hoisting" 이라는 기술
 
+// github.com/webkit  
+
+// source/wtf/wtf    RefCounted.h 열어 보세요
+
+
+// 구글 "C++ IDioms" 검색후   1번째 링크
+
 class Window
 {
 	int handle;
