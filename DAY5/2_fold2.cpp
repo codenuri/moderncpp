@@ -17,9 +17,13 @@ template<typename T> void printv(const T& a)
 template<typename ... Types>
 void Show(Types ... args)
 {
-	( printv(args) , ... );
+	// #1
+//	( printv(args) , ... );
 	// args       op ...		=> unary right fold
 	// printv(1), (printv(2), (printv(3), ( ... )))))
+
+	// #2
+	(std::cout << ... << args);
 }
 
 int main()
