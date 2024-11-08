@@ -23,7 +23,13 @@ void Show(Types ... args)
 	// printv(1), (printv(2), (printv(3), ( ... )))))
 
 	// #2
-	(std::cout << ... << args);
+	// (std::cout << ... << args);
+	//초기값    op ... op pack	=> binary left fold
+	// (((std::cout<< e1) << e2 ) << e3
+
+	// #3
+	((std::cout << args << " ") , ...);
+	// pack 을 사용하는 패턴     op ...
 }
 
 int main()
