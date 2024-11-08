@@ -60,3 +60,7 @@ int main()
 	int n2 = cobj.get(); // get(cobj)=> get(const Point&) 생성
 
 }
+
+// 복습할때 recursive lambda 검색해 보세요
+// => 람다 표현식으로 재귀 호출 만들기
+// => C++23 부터 가능. explicit object parameter 로!!
