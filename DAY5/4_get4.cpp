@@ -8,8 +8,6 @@
 template<int N, typename T>
 struct tuple_element;
 
-
-
 template<typename T, typename ... Ts>
 struct tuple_element<0, tuple<T, Ts...> >
 {
@@ -24,13 +22,6 @@ struct tuple_element<N, tuple<T, Ts...> >
 	using tupleType = typename tuple_element<N - 1, tuple<Ts...>>::tupleType;
 };
 
-
-
-
-
-
-
-
 template<int N, typename TP>
 typename tuple_element<N, TP>::type&
 get(TP& tp)
@@ -44,7 +35,12 @@ int main()
 	
 	get<0>(t3) = 10;
 
-	std::cout << get<0>(t3) << std::endl; // 10
-	std::cout << get<1>(t3) << std::endl; // 3.4
-	std::cout << get<2>(t3) << std::endl; // 'A'
+	printf("%d\n", get<0>(t3));
+
+//	std::cout << get<0>(t3) << std::endl; // 10
+//	std::cout << get<1>(t3) << std::endl; // 3.4
+//	std::cout << get<2>(t3) << std::endl; // 'A'
 }
+
+// godbolt.org 접속. 위소스 넣으세요
+// tuple.h 도 헤더 지우고, 소스로 넣으세요
