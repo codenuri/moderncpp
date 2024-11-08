@@ -13,6 +13,7 @@ struct tuple<T, Ts...>
 	T value;
 
 	tuple() = default;
+
 	tuple(const T& value) : value(value) {}
 
 	static constexpr int N = 1;
