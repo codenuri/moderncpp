@@ -34,7 +34,8 @@ public:
 	*/
 	// 아래 처럼 하면 2개를 자동생성할수 있습니다.
 	template<typename T>
-	decltype(auto) get(this T&& self)
+	std::conditional_t< std::is_const_v<T>, const int&, int&>
+	get(this T& self)
 	{
 		return self.data;
 	}
@@ -46,6 +47,8 @@ int main()
 	const Object cobj;
 
 	int n1 = obj.get();  // get(obj) => get(Point&)		  생성
+	obj.get() = 0;
+
 	int n2 = cobj.get(); // get(cobj)=> get(const Point&) 생성
 
 }
