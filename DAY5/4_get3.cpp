@@ -42,14 +42,21 @@ struct tuple_element<0, tuple<T, Ts...> >
 };
 
 // N != 0
+// => recursive(N-1) 로 해서 N == 0 을 만들면 된다.
 template<int N, typename T, typename ... Ts>
 struct tuple_element<N, tuple<T, Ts...> >
 {
 	// tuple<int, double, char> 의 2번째 타입은
 	// tuple<     double, char> 의 1번째 타입이고
 	// tuple<             char> 의 0번째 타입이다(N==0 이 해결)
-	using type = T;
+
+	using type = typename tuple_element<N - 1, tuple<Ts...>>::type;
 };
+
+
+
+
+
 
 
 
