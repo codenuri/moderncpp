@@ -24,7 +24,22 @@ int main()
 	// C++20 : 이항과 단항을 모두 받는다..
 	//		   이항 : 비교 방법
 	//		   단항 : projection
-	std::ranges::sort(v, std::less<int>{},
+	std::ranges::sort(v, 
+					std::less<int>{},
+
 					[](const std::string& s) { return s.size(); });	
 	
+
+	// project 은 
+	// => 단항 함수, 멤버 함수 포인터, 멤버 변수 포인터 모두 가능..
+	std::ranges::sort(v, std::less<int>{}, &std::string::size );
+
+
+	// 비교정책사용시 {} 만 전달하면 std::less 사용
+	std::ranges::sort(v, {}, &std::string::size);
+
+
+	// C++20의 모든 알고리즘은 함수 가 아닌 함수 객체 입니다.
+	std::ranges::sort.operator()(v, {}, &std::string::size);
+
 }
