@@ -52,6 +52,15 @@ int main()
 	// move 배울때 실제 위처럼 작성하게 됩니다.
 }
 
+// 예외가 없음을 보장할수 있을때만 noexcept 붙이세요
+// => 잘 모르면 붙이지 마세요
+// => 아래 hoo 는 예외 없을까요 ?
+int* hoo()
+{
+	int* p = new int;
+	return p;
+}
+
 
 
 
