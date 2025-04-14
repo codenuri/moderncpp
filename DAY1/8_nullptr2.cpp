@@ -3,8 +3,10 @@
 
 template<typename F, typename ARG>
 void forward_parameter(F f, ARG arg)	// int arg = 0; 
-{
-	f(arg);	// arg 가 int 였다면 foo(arg) 이므로 error
+{										// std::nullptr_t arg = nullptr;
+	f(arg);	// 1. arg 가 int 였다면 foo(arg) 이므로 error
+			// 2. arg 가 std::nullptr_t 였다면 arg 는 모든 타입터 타입으로
+			//     암시적 형변환 되므로 ok
 }
 
 
