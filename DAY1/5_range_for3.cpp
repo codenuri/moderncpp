@@ -4,6 +4,11 @@
 struct Point3D
 {
 	int x = 1, y = 2, z = 3;
+
+	// Point3D 타입의 객체를 range-for 에 넣으려면
+	// begin/end 멤버함수가 있으면 됩니다.
+	int* begin() { return &x; }
+	int* end() { return &z + 1; }
 };
 
 int main()
