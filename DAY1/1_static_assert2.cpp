@@ -12,15 +12,28 @@ struct PACKET	  // padding 넣지 말라는 의미
 static_assert (sizeof(PACKET) == sizeof(char) + sizeof(int),
 				"error. unexpected padding!!!");
 
+/*
 int main()
 {
 	std::cout << sizeof(PACKET) << std::endl; // ?
 }
-
+*/
 
 
 
 template<typename T> void object_set_zero(T* p)
 {
 	memset(p, 0, sizeof(T)); 
+}
+
+class Test
+{
+	int data;
+public:
+};
+
+int main()
+{
+	Test t;
+	object_set_zero(&t);
 }
