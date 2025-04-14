@@ -33,6 +33,23 @@ int main()
 	std::cout << std::boolalpha; // 1, 0 이 아닌 true, false 로 해달라
 	std::cout << b1 << std::endl;
 	std::cout << b2 << std::endl;
+
+	// 함수가 예외가 없음을 알리면 얻는 장점이 뭔가요 ?
+	// 1. 보다 최적화된 기계어 코드
+	// 2. 사용자가 안전한 코드를 원할때 조사해서 사용
+
+	if (noexcept(goo()))
+	{
+		// goo 는 예외가 없다면 안전하므로 사용
+		goo();
+	}
+	else
+	{
+		// 그렇지 않다면 다른 방법 사용
+		foo();
+	}
+
+	// move 배울때 실제 위처럼 작성하게 됩니다.
 }
 
 
