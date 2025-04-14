@@ -24,6 +24,9 @@ int main()
 	Point p2(1, 2);
 }
 
+// 1. "godbolt.org" 접속하세요
+// 2. C++ 선택하세요
+// 3. 위소스 복사해서 "godbolt.org" 왼쪽에 넣으세요
 
 
 
