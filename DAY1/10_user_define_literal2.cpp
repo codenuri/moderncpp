@@ -7,9 +7,11 @@ public:
 	Gram(int v) : value(v) {}
 };
 
-Gram operator""gram(int n)
+// 정수형 리터럴에 붙이는 접미사는 인자가 unsigned long long 이어야 합니다.
+// => 34page 아래 표 참고
+Gram operator""gram(unsigned long long n)
 {
-	Gram g(n);
+	Gram g( static_cast<int>(n));
 	return g;
 }
 
