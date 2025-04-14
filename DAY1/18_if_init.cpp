@@ -25,7 +25,21 @@ int main()
 	{
 	case 1: break;
 	case 2: break;
+	}
 
+	// C++20 부터 range-for 도 가능합니다.
+	// => 많이 사용합니다.
+	for (std::vector v = { 1,2,3 }; auto e : v)
+	{
+
+	}
+
+	// while 도 될까요 ?
+
+	while (int cnt = 0; cnt < 10)
+	{
+
+		++cnt;
 	}
 
 }
