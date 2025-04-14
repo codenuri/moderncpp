@@ -18,7 +18,7 @@ typedef std::unordered_set SET;
 using DWORD = int;		// 타입의 별명
 
 template<typename T>
-using SET<T> = std::unordered_set<T>; // 템플릿 별명
+using SET = std::unordered_set<T>; // 템플릿 별명
 
 int main()
 {
