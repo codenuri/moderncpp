@@ -38,6 +38,9 @@ int main()
 
 	std::this_thread::sleep_for(30ns); // ok. 외와 동일
 	std::this_thread::sleep_for(30us);
+	std::this_thread::sleep_for(30ms);
+	std::this_thread::sleep_for(30s);
+	std::this_thread::sleep_for(30min);
 }
 
 
