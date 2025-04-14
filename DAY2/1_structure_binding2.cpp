@@ -23,3 +23,13 @@ int main()
 	int _ = 10;
 	int _ = 20; // C++26 부터 ok
 }
+
+// g++ 사용시
+// g++ a.cpp -std=c++2a   , C++20 나오기전 옵션
+// g++ a.cpp -std=c++20   , 정식 발표후
+
+// g++ a.cpp -std=c++2b   , C++23 나오기전 옵션
+// g++ a.cpp -std=c++23   , 정식 발표후
+
+// g++ a.cpp -std=c++2c   , C++26 나오기전 옵션
+// g++ a.cpp -std=c++26   , 정식 발표후
