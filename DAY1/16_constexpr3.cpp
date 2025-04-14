@@ -13,6 +13,12 @@
 constexpr int Factorial(int n)
 {
 	return n == 1 ? 1 : n * Factorial(n - 1);
+
+	// constexpr 함수의 한계
+	// 이 안에서, 화면출력, 메모리 할당, 파일 입출력등의 작업을 하면 에러입니다.
+	// std::cout << "A\n"; // error
+
+	// github.com/webkit/source/wtf/wtf/seconds.h 접속해 보세요
 }
 
 int main()
