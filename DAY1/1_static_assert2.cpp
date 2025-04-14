@@ -23,6 +23,15 @@ int main()
 
 template<typename T> void object_set_zero(T* p)
 {
+	// 가상함수가 있는 타입은 절대 memset 하면 안됩니다.
+	// => 객체메모리 제일위에 있는 가상함수 테이블 포인터 까지 0으로 됩니다
+	//	  
+	// std::is_polymorphic<T>::value : T 타입에 가상함수가 있으면 true
+	//								=> 목요일에 배우는 traits 기술
+
+	static_assert(!std::is_polymorphic<T>::value,
+				"error. T has virtual function");
+
 	memset(p, 0, sizeof(T)); 
 }
 
