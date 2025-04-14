@@ -6,7 +6,7 @@ template<typename T>
 class take_view
 {
 	T& rg;
-	int cnt;
+	int cnt;	
 public:
 	take_view(T& r, int c) : rg(r), cnt(c) {}
 
@@ -16,7 +16,7 @@ public:
 };
 int main()
 {
-	std::vector<int> v = { 1,2,3,4,5, 6, 7, 8, 9,10 };
+	std::vector v = { 1,2,3,4,5, 6, 7, 8, 9,10 };
 	
 	take_view tv(v, 3);
 
