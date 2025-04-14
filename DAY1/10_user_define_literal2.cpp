@@ -7,7 +7,15 @@ public:
 	Gram(int v) : value(v) {}
 };
 
+Gram operator""gram(int n)
+{
+	Gram g(n);
+	return g;
+}
+
 int main()
 {
-	Gram g = 30gram;
+	// 사용자 정의 리터럴의 핵심원리
+	// => 컴파일러가 약속된 함수를 찾는 것
+	Gram g = 30gram; // operator""gram(30)
 }
