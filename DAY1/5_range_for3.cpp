@@ -1,6 +1,10 @@
 #include <iostream>
 #include <vector>
 
+// 파이썬, C#, Java 등 거의 모든 언어의 range-for 원리는
+// => 반복자를 꺼내는 것 입니다.
+// => 그래서, "iterable 한 타입" 만 range-for 에 넣을수 있다 라고 합니다.
+
 struct Point3D
 {
 	int x = 1, y = 2, z = 3;
