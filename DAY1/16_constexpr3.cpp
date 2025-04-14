@@ -27,8 +27,12 @@ int main()
 
 	// 
 	int ret1 = Factorial(5); // ok. 컴파일 시간 ? 실행시간 ?
+							// => 컴파일러의 종류, 버전에 따라 다름
 
 	const int ret2 = Factorial(5); // ok. 컴파일 시간 ? 실행시간 ?
+							// => 컴파일러의 종류, 버전에 따라 다름
 
 	constexpr int ret3 = Factorial(5); // ok. 컴파일 시간 ? 실행시간 ?
+							// => 반드시 컴파일 할때 수행해 달라는 것
+							// 
 }
