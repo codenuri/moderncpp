@@ -15,7 +15,9 @@ public:
 
 	void print()
 	{
-		for (auto& e : *this)
+		for (auto& e : *this)  // *this 는 결국 자기 자신인데
+								// std::list 에서 파생되므로
+								// 이렇게 사용가능.
 			std::cout << e << ", ";
 		std::cout << std::endl;
 	}
