@@ -39,6 +39,7 @@ class Test
 {
 	int data;
 public:
+	virtual void foo() {}
 };
 
 int main()
