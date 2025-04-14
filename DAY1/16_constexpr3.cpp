@@ -19,11 +19,16 @@ int main()
 {
 	int n = 5;
 
-	int arr1[Factorial(5)]; 
+	int arr1[Factorial(5)]; // ok. 컴파일 하면 int arr1[120] 이 됩니다.
 
-	int arr2[Factorial(n)]; 
+	int arr2[Factorial(n)]; // error. 인자값을 컴파일 할때 알수 없다.
 						
-	int s2 = Factorial(n); 
+	int s2 = Factorial(n); // ok. 실행시간에 함수 호출
 
-	int s = Factorial(5);
+	// 
+	int ret1 = Factorial(5); // ok. 컴파일 시간 ? 실행시간 ?
+
+	const int ret2 = Factorial(5); // ok. 컴파일 시간 ? 실행시간 ?
+
+	constexpr int ret3 = Factorial(5); // ok. 컴파일 시간 ? 실행시간 ?
 }
