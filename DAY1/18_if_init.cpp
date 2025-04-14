@@ -35,7 +35,8 @@ int main()
 	}
 
 	// while 도 될까요 ?
-
+	// => 안됩니다.
+	// => 이미 for 가 있어서 필요가 없다고 판단... 
 	while (int cnt = 0; cnt < 10)
 	{
 
