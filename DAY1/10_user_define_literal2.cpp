@@ -29,3 +29,7 @@ int main()
 
 	auto g2 = 30_gram;
 }
+
+// 참고 : rust 코드
+// let n1 = 10i32; // i32 타입의 10, let 은 auto
+// let n2 = 10u8;  // u8  타입의 10,
