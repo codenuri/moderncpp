@@ -57,10 +57,16 @@ int main()
 // => 아래 hoo 는 예외 없을까요 ?
 int* hoo()
 {
-	int* p = new int;
+	int* p = new int; // 메모리 할당 실패시
+					  // std::bad_alloc 이라는 이름의 예외 발생
 	return p;
 }
 
-
+// 아래 같은 코드는 예외 없습니다.
+// => 함수 안의 모든 문장이 예외가 없습니다.
+int Add(int a, int b)
+{
+	return a + b;
+}
 
 
