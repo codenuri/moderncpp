@@ -1,6 +1,7 @@
 // github.com/codenuri/moderncpp 에서 DAY.zip 받으시면 됩니다.
 // 
 // 19_structure_binding - 52 page
+#include <iostream>
 #include <map>
 #include <string>
 
@@ -39,25 +40,31 @@ int main()
 	int arr[3] = { 1,2,3 };
 	auto [d1, d2, d3] = arr;
 
-
-
 	//-------------------------
 	std::map<std::string, std::string> m;
 
 	m["mon"] = "월요일";
 
 	// map은 pair를 보관합니다.
+	// => 위 한줄은 결국 아래와 동일합니다.
 	std::pair<std::string, std::string> p;
 	p.first = "tue";
 	p.second = "화요일";
 	m.insert(p);
 
+	// map 의 모든 요소 열거하기
+	// C+17 이전
+	for (auto e : m)
+	{
+		// e의 타입은 pair 입니다.
+		std::string key = e.first;
+		std::string value = e.second;
+	}
+
+	// C++17 이후
+	for (const auto& [key, value] : m)
+	{
+		std::cout << key << " : " << value << std::endl;
+	}
+
 }
-
-
-// 1. 출석부 서명해 주세요
-
-// 2. github.com/codenuri/moderncpp 에서 
-// 
-// DAY2.zip 받으시면 됩니다.
-
