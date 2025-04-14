@@ -26,8 +26,9 @@ int main()
 {
 	// noexcept( 함수 호출 표현식 ) : 표현식 때로 호출했을때
 	//								 예외 가능성이 없으면 true
-	bool b1 = noexcept(foo());
-	bool b2 = noexcept(goo());
+	// 원리 : 함수 선언뒤에 noexcept 가 표기되어 있는지 조사하는것					
+	bool b1 = noexcept(foo());	// true
+	bool b2 = noexcept(goo());	// false
 
 	std::cout << std::boolalpha; // 1, 0 이 아닌 true, false 로 해달라
 	std::cout << b1 << std::endl;
