@@ -20,14 +20,14 @@ using DWORD = int;		// 타입의 별명
 template<typename T>
 using SET<T> = std::unordered_set<T>; // 템플릿 별명
 
-
-
-
 int main()
 {
 //	std::unordered_set<int>    s1;
 //	std::unordered_set<double> s2;
-
 	SETI s1;
 	SETD s2;
+
+	// SET 은 템플릿의 별명이므로 사용시 템플릿 인자 전달해야 합니다.
+	SET<int> s3;
+	SET<double> s4;
 }
