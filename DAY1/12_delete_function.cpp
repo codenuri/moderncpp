@@ -22,4 +22,7 @@ int main()
 	Point p1;
 	Point p2(1, 2);
 	Point p3(p2); // 컴파일러가 만들어주는 복사생성자사용
+					// 복사 생성자가 삭제 되었다면 error
+			// 주로 singleton 같은 디자인 패턴만들때사용
+			// 내일 move 시간에 좀더 자세히
 }
