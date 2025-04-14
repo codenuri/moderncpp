@@ -28,6 +28,16 @@ int main()
 	// => 초기값으로 추론
 	std::vector v1 = { "AB", "CD" };
 	std::vector v2 = { "AB"s, "CD"s };
+
+	// 현재 스레드를 재우려면 sleep_for 라는 표준함수 사용
+	std::this_thread::sleep_for(30); // error.
+									 // 인자로 시간관련 타입필요
+
+	std::chrono::nanoseconds ns(30);
+	std::this_thread::sleep_for(ns); // ok
+
+	std::this_thread::sleep_for(30ns); // ok. 외와 동일
+	std::this_thread::sleep_for(30us);
 }
 
 
