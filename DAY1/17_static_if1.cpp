@@ -29,5 +29,5 @@ public:
 
 int main()
 {
-	A a;
+	A<int> a;
 }
