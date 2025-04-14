@@ -50,6 +50,8 @@ int main()
 	}
 
 	// move 배울때 실제 위처럼 작성하게 됩니다.
+
+	std::pair<int, int> p(3, 4);
 }
 
 // 예외가 없음을 보장할수 있을때만 noexcept 붙이세요
@@ -64,7 +66,9 @@ int* hoo()
 
 // 아래 같은 코드는 예외 없습니다.
 // => 함수 안의 모든 문장이 예외가 없습니다.
-int Add(int a, int b)
+// => 이런 경우는 noexcept 를 붙이는 것이 좋은 코드 입니다.
+//int Add(int a, int b)
+int Add(int a, int b) noexcept // good
 {
 	return a + b;
 }
