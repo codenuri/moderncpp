@@ -13,4 +13,7 @@ int main()
 	// C++11 부터는 포인터 0을 의미하는 새로운 리터럴 도입
 	int* p3 = nullptr; // good
 	int* p4 = 0;	   // bad. 에러는 아니지만 나쁜 코드
+
+	int n2 = nullptr; // error. 
+					  // nullptr 은 포인터 초기화만 사용가능
 }
