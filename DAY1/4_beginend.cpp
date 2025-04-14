@@ -29,3 +29,11 @@ int main()
 	auto p2 = std::end(v);
 
 }
+
+// 아래 같은 코드에서 인자로 배열도 올수 있다고 생각할때 사용
+template<typename T>
+void use_container(T& c)
+{
+	auto p = c.begin(); // c가 배열이면 에러
+	auto p = std::begin(c); // c가 배열이라도 ok
+}
