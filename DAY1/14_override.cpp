@@ -21,9 +21,9 @@ public:
 	// C++98 시절에 위와 같은 특징 때문에 버그가 너무 많이 생겼습니다.
 	// => 그래서 C++11 부터 override 키워드 추가
 	// => 새로운 함수가 아닌 "오버라이드" 하는 것이라고 알리는것
-	virtual void fooo() override {}
+	virtual void fooo()        override {}
 	virtual void goo(double a) override {}
-	virtual void hoo() const override {}
+	virtual void hoo() const   override {}
 
 
 };
