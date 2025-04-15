@@ -6,7 +6,7 @@
 template<typename T> void foo(T a)
 {
 	// __func__ : 함수 이름을 담은 매크로 (C++ 표준)
-	std::cout << __func__ std::endl;
+	std::cout << __func__ << std::endl;
 }
 
 
