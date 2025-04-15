@@ -9,9 +9,7 @@ public:
 	// => 아래 main 에서 "copy initialization" 은 모두 에러!
 	explicit Vector(int s) : sz(s) {}
 };
-
 void foo(Vector v) {} 				  
-
 int main()
 {
 	// #1. 인자가 한개인 생성자가 있으면 아래의 표기법이 가능합니다.
@@ -23,6 +21,7 @@ int main()
 	//----------------
 	// #2. 
 	foo(10); // Vector v = 10 입니다.!!
+			 // explicit 생성자였다면 에러. 
 }
 
 
