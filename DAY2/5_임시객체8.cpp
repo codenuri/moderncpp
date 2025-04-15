@@ -4,6 +4,10 @@
 // 임시객체의 어려움을 보여주는 예제
 
 // Max 를 만들어 봅시다.
+std::string Max(std::string a, std::string b)
+{
+	return a < b ? b : a;
+}
 
 int main()
 {
