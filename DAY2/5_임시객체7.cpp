@@ -8,7 +8,8 @@ class Counter
 public:
 	int cnt{ 0 };
 
-	Counter increment()
+//	Counter increment()
+	Counter& increment()
 	{
 		++cnt;
 		return *this;
@@ -22,7 +23,6 @@ public:
 	{
 		std::cout << cnt << " 를 가진 객체를 복사해서 객체 생성\n";
 	}
-
 };
 
 int main()
