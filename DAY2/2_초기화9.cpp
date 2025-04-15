@@ -33,6 +33,8 @@ int main()
 	// 아래 코드를 지원하기 위해 추가된 문법
 	std::vector<int> v1 = { 1,2,3,4,5 };
 	std::vector<int> v2{ 1,2,3,4,5 };
+
+	// => vector(std::initializer_list) 생성자가 있다는 의미
 }
 
 
