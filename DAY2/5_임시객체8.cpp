@@ -23,11 +23,15 @@ int main()
 
 	const std::string& ret = Max(s1, s2);
 					// ret 는 결국 s2 의 별명!
+					// 여기서 ret 는 안전
 
 	// 질문, 아래 코드 안전할까요 ?
 	const std::string& ret2 = Max(std::string{ "A" }, std::string{ "B" });
 
 	// ret2 사용해도 될까요?
+	// => temporary 는 최초 1회 const reference 에의해서만 수명연장됩니다.
+	// => 2번 연장될수 없습니다.
+	// => 따라서 여기서 ret2 사용하면 버그.. 
 }
 
 // cppreference.com 에서 std::max 검색
