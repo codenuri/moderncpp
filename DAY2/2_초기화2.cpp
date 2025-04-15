@@ -22,6 +22,7 @@ int main()
 
 	// direct initialization : = 이 없는 초기화
 	// copy   initialization : = 이 있는 초기화
+	// => 차이점은 explicit 배울때.. 
 }
 
 
