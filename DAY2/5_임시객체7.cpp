@@ -1,3 +1,6 @@
+// 5_임시객체7.cpp 추가후
+// => git 에 코드 있습니다. 복사해 오세요
+
 #include <iostream>
 
 class Counter
@@ -5,18 +8,21 @@ class Counter
 public:
 	int cnt{ 0 };
 
-	void increment()
+	Counter increment()
 	{
 		++cnt;
+
+		return *this;
 	}
 };
 
 int main()
 {
 	Counter c;
-	c.increment();
-	c.increment();
-	c.increment();
+
+	// 아래 처럼 멤버 함수를 연속으로 호출하는 것을
+	// => method chaining 이라고 하고 요즘 많은 언어에서 유행합니다.
+	c.increment().increment().increment();
 
 	std::cout << c.cnt << std::endl;
 }
