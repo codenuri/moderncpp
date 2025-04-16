@@ -1,5 +1,6 @@
 // std::move()소개
 #include <iostream>
+#include <cstring>
 
 class Cat
 {
@@ -67,4 +68,5 @@ int main()
 // g++ 사용하고, -fno-elide-constructors" 라는 옵션을 사용하면
 // => "copy ellision" 하지 말라는 의미 입니다.
 // => g++ 소스이름.cpp -std=c++11 -fno-elide-constructors 로 빌드
+
 
