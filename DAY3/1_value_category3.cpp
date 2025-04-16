@@ -13,7 +13,11 @@ int main()
 
 	n * 3 + 2;
 
-	using T = decltype(n * 3 + 2);
+//	using T = decltype(n * 3 + 2);
+//	using T = decltype(n); // 이렇게조사하면 규칙 #1 사용
+						   // lvalue, rvalue 조사가 아니라 선언으로 결정
+	using T = decltype((n)); // 규칙 #2를 사용하게 하기 위해
+							//  expression 을 () 로 묶은것
 
 	if (std::is_lvalue_reference_v<T>) // T 가 참조인지 조사하는것
 	{
@@ -24,3 +28,4 @@ int main()
 		std::cout << "rvalue\n";
 	}
 }
+// 언어 버전 C++17로 설정하고 실행해 보세요. 
