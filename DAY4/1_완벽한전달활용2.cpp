@@ -23,13 +23,15 @@ public:
 	void set_name(T&& n)
 	{
 		// 다음중 맞는 것은 ?
-		name = n;					// 1. 
-		name = std::move(n);		// 2. 
-		name = std::forward<T>(n);	// 3.
+//		name = n;					// 1. 항상 복사 생성자 호출
+//		name = std::move(n);		// 2. 항상 이동 생성자 호출
+
+		// 아래 캐스팅은 set_name() 의 3번째 인자로 
+		// lvalue 를 보내면 lvalue 캐스팅 - 복사 생성자 호출
+		// rvalue 를 보내면 rvalue 캐스팅 - 이동 생성자 호출
+		name = std::forward<T>(n);	// 3. 정답
 	}
 };
-
-
 
 
 int main()
