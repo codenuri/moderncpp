@@ -39,3 +39,7 @@ int main()
 // #1. swap, 버퍼복사 등의 알고리즘 작성시 적절하게 move 를 사용하면 빨라집니다.
 
 // #2. std::string 이 아닌 우리가 만든 클래스가 move 를 지원하게 하려면??
+
+Person p1("kim");
+Person p2 = std::move(p1); // 이름 문자열을 이동하게 하려면
+							// Person class 을 어떻게 만들어야 할까 ?
