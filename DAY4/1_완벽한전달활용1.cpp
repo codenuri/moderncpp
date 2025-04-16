@@ -50,6 +50,7 @@ int main()
 // => 그냥, 가독성을 위해 push_xxx() 하세요
 
 
+
 // 2. 사용자 정의 타입을 값으로 저장하는 컨테이너
 // => std::vector<Point> v;
 // => push_xxx() 보다는 emplace_xxx() 가 좋습니다.
@@ -58,3 +59,9 @@ int main()
 // push_front()	==> emplace_front();
 // insert()	    ==> emplace();
 
+
+// 3. 사용자 정의 타입의 포인터를 보관하는 컨테이너
+// => 그냥 push_xxx 하면 됩니다.
+
+// 4. 컨테이너는 레퍼런스를 저장할수 없습니다.
+// std::vector<Point&> v; // error..  
