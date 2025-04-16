@@ -17,16 +17,19 @@ public:
 		std::cout << "move" << std::endl;
 	}
 };
-
 int main()
 {
 	Object o1;
 	Object o2 = o1; // 항상 복사 생성자 호출
 	Object o3 = std::move(o1); // 항상 이동 생성자 호출
 
-	Object o4 = std::move_if_noexcept(o1);	// 핵심
+	Object o4 = std::move_if_noexcept(o3);	// 핵심
 					// 이동생성자가 noexcept 인경우 이동생성자 사용
+					//		=> static_cast<Cat&&> 로 캐스팅해서 반환
+					// 
 					// 아닌 경우 복사 생성자 사용
+					//		=> static_cast<Cat&> 로 캐스팅해서 반환
+					// 
 					// std::vector 가 내부적으로 이 함수로 버퍼 복사
 		
 
