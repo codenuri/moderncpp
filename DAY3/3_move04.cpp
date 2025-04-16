@@ -24,9 +24,10 @@ public:
 	// => 위 복사 생성자가 "lvalue, rvalue" 를 모두 받을수있지만
 	// => 아래와 같이 rvalue 전용 버전을 만들면
 	// => 임시객체(rvalue) 의 경우 아래 버전 사용
-	Cat(Cat&& c) : age(c.age)
+	// => 아래 멤버 함수를 "이동생성자(move constructor)" 라고 합니다.
+	Cat(Cat&& c) : age(c.age), name(c.name)
 	{
-		name = c.name;
+	//	name = c.name;
 
 		c.name = nullptr; // 자원을 포기하게 합니다.
 						  // 임시객체 소멸자가 delete 0 하게 되는데
