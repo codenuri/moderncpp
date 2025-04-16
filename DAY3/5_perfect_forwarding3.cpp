@@ -16,6 +16,6 @@ int main()
 {
 	hoo(10); // ok
 
-	chronometry(hoo, 10);	// 왜 에러인지 생각해 보세요
+	chronometry(hoo, 10);	// error. 왜 에러인지 생각해 보세요
 							// 이유와 해결은 다음 소스에서
 }
