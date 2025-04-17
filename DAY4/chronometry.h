@@ -25,6 +25,7 @@ public:
 	}
 };
 
+/*
 template<typename F, typename ... T>
 decltype(auto) chronometry(F f, T&& ... arg)
 {
@@ -36,4 +37,14 @@ decltype(auto) chronometry(F f, T&& ... arg)
 
 	// 아래 처럼 하면 일반 함수 뿐 아니라 멤버 함수, 람다 표현식, 함수객체 모두 사용
 	return std::invoke(f, std::forward<T>(arg)...);
+}
+*/
+
+// 최종 버전
+template<typename F, typename ... T>
+decltype(auto) chronometry(F&& f, T&& ... arg)
+{
+	stop_watch sw(true);
+
+	return std::invoke(std::forward<F>(f), std::forward<T>(arg)...);
 }
