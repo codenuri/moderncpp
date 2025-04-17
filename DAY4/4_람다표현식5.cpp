@@ -35,9 +35,13 @@ int main()
 
 	// #3. 여러개 람다 표현식을 컨테이너에 보관하고 싶다.
 
-	std::vector<auto> v1; // ?
+//	std::vector<auto> v1; // error
 
-	std::vector<int(*)(int, int)> v2; // ?
+	std::vector<int(*)(int, int)> v2; // ok. 단,
+								// 캡쳐한 람다는 안됨.
+	v2.push_back([](int a, int b) { return a + b; });
+	v2.push_back([](int a, int b) { return a - b; });
 
-	std::vector<std::function<int(int, int)> v3; // ?
+	std::vector<std::function<int(int, int)> v3; // best, 권장
+								// 캡쳐한 람다도 가능
 }
