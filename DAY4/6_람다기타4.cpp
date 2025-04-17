@@ -35,13 +35,35 @@ int main()
 					// 객체.operator 함수포인터타입() 이 필요
 
 	int n = f(1, 2);
+
+
+	// 생각 해보세요
+	int v1 = 10;
+
+	int(*f1)(int, int) = [v1](int a, int b) {return a + b + v1; };
+					// error.!!
 }
 
+// 지역변수 캡쳐한 경우
+class CompilerGeneratedName
+{
+	int v1;
+public:
+	inline int operator()(int a, int b) const { return a + b + v1; }
 
+	// 아래 static 멤버 함수에서 v1 에 접근이 안됩니다.
+	// => 그래서 캡쳐한 람다 표현식은 "함수 포인터로 변환 될수없다"
+	//    라는 문법이 있습니다. (rust 에도 동일 문법 존재)
+	
+	static int helper(int a, int b)
+	{
+		return a + b + v1;
+	}
 
+	using FP = int(*)(int, int);
 
-
-
+	operator FP() { return &CompilerGeneratedName::helper; }
+};
 
 
 
