@@ -13,7 +13,13 @@ public:
 	}
 	int operator()()
 	{
-		return rand() % 10;
+		int k = -1;
+
+		while (!bs.test(k = rand() % 10));
+
+		bs.reset(k);
+
+		return k;
 	}
 };
 
