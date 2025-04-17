@@ -8,17 +8,18 @@ public:
 };
 
 template<typename F, typename ... T>
-decltype(auto) chronometry(F f, T&& ... arg)
+decltype(auto) chronometry(F&& f, T&& ... arg)
 {
-	stop_watch sw(true);
+//	return std::forward<F>(f) (std::forward<T>(arg)...);
 
-	return f(std::forward<T>(arg)...);
+	return std::invoke(std::forward<F>(f), std::forward<T>(arg)...);
 }
 int main()
 {
 	Functor f;
 
-	f(1);
-	Functor{}(1);
+	// chronometry 로 아래 2개 성능 측정
+	chronometry(f, 1);			// f(1);
+	chronometry(Functor{}, 1);  // Functor{}(1);
 
 }
