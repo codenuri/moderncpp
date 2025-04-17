@@ -39,8 +39,15 @@ int main()
 						// 이런것을 "Closure" 라고 합니다.
 
 //	std::find_if(v.begin(), v.end(), cmp );    // 함수만 전달
+// 
 //	std::find_if(v.begin(), v.end(), IsDivide{ k }); // 함수 + k값 전달
 }
 
+// 클로져(Closure)
+// => 자신의 외부 함수(위예제는 main) 의 지역변수를 캡쳐할수 있는 함수
 
+// C++ 은 "함수객체" 가 closure 입니다.
+
+// 구글에서 "python closure"
+//			"rust closure", "go closure", "java closure"
 
