@@ -19,6 +19,10 @@ public:
 
 
 	// #2. T&& 를 사용하면 lvalue &, rvalue & 버전을 자동생성가능
+	// => 그런데, 아래 처럼 하면 lvalue string, const lvalue string 등을
+	//    각각생성하게 됩니다.
+	// => 위 모양은 "set_name(const std::string& n)" 버전에서 모두 처리 가능
+	// => 인자가 한개인 setter 는 아래 코드 보다는 #1 을 권장
 	template<typename T>
 	void set_name(T&& n)
 	{
