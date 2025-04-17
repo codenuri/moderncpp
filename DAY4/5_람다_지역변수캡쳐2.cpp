@@ -3,15 +3,23 @@
 
 int main()
 {
+//	Point pt = Point{ 0, 0 } // => Point pt{0,0}
+
 	int v1 = 10, v2 = 10;
 
 	// 람다 표현식 : () 연산자가 상수 멤버 함수 입니다.
 	// mutable 람다 표현식  : () 연산자가 상수 멤버 함수가 아닙니다.
 	auto f1 = [v1, v2](int a) mutable { v1 = 100; return a + v1 + v2; }; 
 
+
 	f1(0); // v1 = 100 실행됨. 하지만 람다표현식객체안의 복사본이 변경된것
 
+
 	std::cout << v1 << std::endl; // 10
+
+
+	std::cout << sizeof(f1) << std::endl; // ???
+
 
 
 	/*
