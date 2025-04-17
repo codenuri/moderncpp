@@ -12,12 +12,22 @@ int main()
 	// 이제 f 는 일반 함수(인라인)처럼 사용하면 됩니다.
 	int n = f(1, 2); 
 	//------------------------------------------
-	// 에러는 찾으세요
-	auto f1  =   [](int a, int b) { return a + b; };
-	auto& f2 =   [](int a, int b) { return a + b; };
+	// 에러를 찾으세요
+	auto f1  =   [](int a, int b) { return a + b; }; // ok
 
-	const auto& f3 = [](int a, int b) { return a + b; };
+	auto& f2 =   [](int a, int b) { return a + b; }; // error
+											// lvalue reference 로
+											// rvalue 를 가리킬수 없다
 
-	auto&& f4 = [](int a, int b) { return a + b; };
+	const auto& f3 = [](int a, int b) { return a + b; }; // ok
+
+	auto&& f4 = [](int a, int b) { return a + b; }; // ok
+
+	// T&&
+
+	// auto && 은 T&& 입니다.(forwarding reference)
+	// => 따라서 lvalue, rvalue 모두 가리킬수 있습니다.
+	auto&& a1 = 10; // ok.  int&& a1 = 10
+	auto&& a2 = n;  // ok.  int&  a2 = n;
 }
 
