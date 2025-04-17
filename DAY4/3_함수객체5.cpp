@@ -4,7 +4,19 @@
 // 아래 코드는 "sort 알고리즘 적용시"
 // => 어떻게 비교할것인가를 3번째 인자로 받아서 
 //    비교정책을 교체할수 있게 했습니다.
+// => C 언어 표준 함수인 "qsort" 의 원리
+// 
 // 장점 : 유연성
+// 단점 : 성능저하. 2중루프 안에서 비교 함수 호출
+
+// cmp1, cmp2 가 인라인 함수라고
+// => 함수 이름으로 호출하면 치환될수 있지만
+// => 함수 포인터에 담아서 호출하면 치환될수 없다.
+
+
+// 비교 정책을 변경하는데, 성능저하 없이(인라인치환) 할수 없을까 ?
+// => C++ 의 함수 객체.. (다음 소스)
+
 
 void sort(int* x, int sz, bool(*cmp)(int, int) )
 {
@@ -21,8 +33,8 @@ void sort(int* x, int sz, bool(*cmp)(int, int) )
 	}
 }
 //--------------------------------------------
-bool cmp1(int a, int b) { return a > b; }
-bool cmp2(int a, int b) { return a < b; }
+inline bool cmp1(int a, int b) { return a > b; }
+inline bool cmp2(int a, int b) { return a < b; }
 
 int main()
 {
