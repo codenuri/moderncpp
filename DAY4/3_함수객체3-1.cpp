@@ -28,6 +28,18 @@ int main()
 	auto p2 = std::find_if(v.begin(), v.end(), f );
 
 	std::cout << *p2 << std::endl;// 6
+
+
+	// IsDivide 객체를 find_if 에 한번만 전달할 목적이면
+	// 임시객체가 좋습니다.
+
+	auto p2 = std::find_if(v.begin(), v.end(), IsDivide{k} );
+						// => 단항함수와 main 지역변수 k를 같이 보내는 의미입니다.
+						// => 즉, 지역변수를 k의 값을 캡쳐해서 같이 전달
+						// 이런것을 "Closure" 라고 합니다.
+
+//	std::find_if(v.begin(), v.end(), cmp );    // 함수만 전달
+//	std::find_if(v.begin(), v.end(), IsDivide{ k }); // 함수 + k값 전달
 }
 
 
