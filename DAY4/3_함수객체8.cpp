@@ -1,7 +1,7 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
-#include "chronomety.h"
+#include "chronometry.h"
 
 inline bool cmp1(int a, int b) { return a < b; }
 inline bool cmp2(int a, int b) { return a > b; }
