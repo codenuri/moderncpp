@@ -27,7 +27,10 @@ public:
 		return k;
 	}
 };
-URandom urand;	
+
+//URandom urand;	
+URandom urand(true);
+
 int main()
 {
 	for (int i = 0; i < 15; i++)
