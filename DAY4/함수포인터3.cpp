@@ -15,5 +15,5 @@ int main()
 
 	chronometry(&foo, 10); // foo(10)의 성능 측정
 	chronometry(&Dialog::close2, 10); 
-	chronometry(&Dialog::close1, &dlg, 10); 
+	chronometry(&Dialog::close1, &dlg, 10); // 함수포인터(&dlg, 10
 }
