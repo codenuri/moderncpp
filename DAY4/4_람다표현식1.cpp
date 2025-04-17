@@ -29,6 +29,10 @@ int main()
 	std::sort(v.begin(), v.end(), std::less<int>{}); // 임시객체형태로
 	std::sort(v.begin(), v.end(), std::less{}); // C++17 이후 타입생략가능
 
+	// #4. 비교정책 전달 - 람다 표현식
+	// => C++11 이후 부터 가능
+	// => 비교 함수 인라인 치환 됩니다.
+	std::sort(v.begin(), v.end(), [](int a, int b) { return a < b; });
 }
 
 
