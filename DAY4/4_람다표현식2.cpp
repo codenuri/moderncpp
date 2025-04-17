@@ -3,6 +3,8 @@
 #include <algorithm>
 #include <functional>
 
+// 
+
 int main()
 {
 	std::vector<int> v = { 1,3,5,7,9,2,4,6,8,10 };
@@ -25,7 +27,13 @@ int main()
 
 }
 
+// 람다 표현식
+// => 함수 객체를 만드는 표기법입니다.
+// => 람다 표현식이 없어도, 사용자가 직접 함수 객체 클래스 만들면 됩니다.
 
+// 람다 표현식(lambda expression)
+// => "표현식(expression)" 이므로 하나의 값을 만드는 코드!!
+// => 결국 람다 표현식은 "임시객체(rvalue)" 를 만드는 표기법
 
 
 
