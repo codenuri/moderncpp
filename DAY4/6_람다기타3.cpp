@@ -1,3 +1,5 @@
+//auto add = [](int a, int b){ return a + b; };
+
 int main()
 {
 	auto swap1 = [](auto& a, auto& b) { auto tmp = std::move(a); 
@@ -15,7 +17,7 @@ int main()
 	// 위 문제를 해결하고
 	// 모든 템플릿 기술을 람다 표현식에도 사용가능하게 하기 위해
 	// C++20 부터 template 람다 표현식 도입됩니다.
-	auto swap2 = []<typename T>(T& a, T& b) { T tmp = std::move(a);
+	auto swap2 = []<typename T1>(T& a, T& b) { T tmp = std::move(a);
 												a = std::move(b);
 												b = std::move(tmp); };
 
