@@ -42,6 +42,6 @@ int main()
 	v2.push_back([](int a, int b) { return a + b; });
 	v2.push_back([](int a, int b) { return a - b; });
 
-	std::vector<std::function<int(int, int)> v3; // best, 권장
+	std::vector<std::function<int(int, int)>> v3; // best, 권장
 								// 캡쳐한 람다도 가능
 }
