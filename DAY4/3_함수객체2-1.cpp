@@ -1,6 +1,6 @@
 #include <iostream>
 
-// 0 ~ 9 사이의 난수를 반환하는 함수
+// 0 ~ 9 사이의 "중복되지 않은 난수" 를 반환하는 함수
 int urand()
 {
 	return rand() % 10;
