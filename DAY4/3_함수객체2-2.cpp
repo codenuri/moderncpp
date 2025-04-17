@@ -27,3 +27,6 @@ int main()
 		std::cout << urand() << std::endl;
 	}
 }
+
+//max(0, 0);
+//max.operator()(0, 0)
