@@ -21,7 +21,11 @@ struct tuple<T, Types...> : public tuple<Types...>
 
 int main()
 {
-	tuple<int, double, short> t(1, 3.4, 3);
+//	tuple<>					  t0;
+//	tuple<             short> t1;	// short  보관
+//	tuple<     double, short> t2;	// double 만 보관
+	tuple<int, double, short> t(1, 3.4, 3); // int 보관
+
 
 	std::cout << t.value << std::endl; // ??
 
