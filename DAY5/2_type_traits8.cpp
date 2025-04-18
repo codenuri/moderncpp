@@ -27,9 +27,21 @@ T&& mymove(T& obj)
 // std::move : lvalue 와 rvalue 를 모두 받아서 rvalue 캐스팅
 
 template<typename T>
-T&& mymove(T&& obj)
+constexpr std::remove_reference_t<T>&& mymove(T&& obj) noexcept
 {
-	return static_cast<T&&>(obj);
+	// T&& 인 함수에
+	// lvalue 를 전달하면 T = Object&
+	// rvalue 를 전달하면 T = Object
+
+	// 따라서 mymove(o2) 하면 T = Object& 이므로 
+	// 아래 캐스팅은 
+	// static_cast<Object& &&>(obj) 입니다
+	// static_cast<Object&>(obj)  <= 결국 이렇게 됩니다.
+//	return static_cast<T&&>(obj); // 결국 lvalue 를 전달시 
+									// lvalue 로 캐스팅한것!
+
+	// 해결책  : T 가 가진 모든 레퍼런스를 제거하고 && 붙이면 됩니다.
+	return static_cast<std::remove_reference_t<T> &&>(obj);
 }
 
 
