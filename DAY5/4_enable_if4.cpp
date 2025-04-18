@@ -12,16 +12,20 @@ void foo(double) {}
 //void goo(가상함수가없는클래스들) {}
 
 // std::enable_if_t<조건, 반환타입>
+// std::enable_if_t<조건>   <== 이렇게 하면 반환 타입은 void
+
 
 template<typename T>
-std::enable_if_t<std::is_polymorphic_v<T>, void>
+//std::enable_if_t<std::is_polymorphic_v<T>, void>
+std::enable_if_t<std::is_polymorphic_v<T>>
 goo(T a)
 {
 	std::cout << "가상함수가 있는 경우\n";
 }
 
 template<typename T>
-std::enable_if_t<!std::is_polymorphic_v<T>, void>
+//std::enable_if_t<!std::is_polymorphic_v<T>, void>
+std::enable_if_t<!std::is_polymorphic_v<T>>
 goo(T a)
 {
 	std::cout << "가상함수가 없는 경우\n";
