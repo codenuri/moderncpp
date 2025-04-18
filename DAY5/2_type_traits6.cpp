@@ -21,6 +21,9 @@ template<typename T> void foo(T a)
 
 	remove_pointer_t<T> n2; // 위와 동일
 	std::remove_pointer_t<T> n3; // 이미 표준에 있습니다(C++14)
+
+
+	
 }
 
 int main()
