@@ -11,6 +11,10 @@ template<typename T> struct remove_pointer
 	using type = T;
 };
 
+template<typename T> struct remove_pointer<T*>
+{
+	using type = T;
+};
 
 int main()
 {
@@ -19,4 +23,6 @@ int main()
 
 template<typename T> void foo(T a)
 {
+	// 주의 사항 : T에 의존해서 사용시 typename 붙여야 합니다.
+	typename remove_pointer<T>::type n;
 }
