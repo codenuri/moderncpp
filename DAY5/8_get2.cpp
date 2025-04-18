@@ -34,4 +34,17 @@ int main()
 	std::cout << static_cast<tuple<short>&>(t).value << std::endl; // 3
 
 
+	int n = get<0>(t);
 }
+
+template<int N, typename TP>
+튜플TP의 N번째 요소의 타입& 
+get(TP& tp)
+{
+	return static_cast<튜플TP의 N번째기반클래스&>(tp).value;
+}
+// 결국 튜플 TP의
+// 1. N 번째 요소의 타입
+// 2. N 번째 기반 클래스의 타입
+// 만 알아내면 됩니다.
+// => 타입 구하기!!!!
