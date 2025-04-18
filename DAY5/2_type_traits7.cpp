@@ -13,9 +13,6 @@
 
 template<typename T> void printv(const T& v)
 {
-	
-
-
 //	if ( std::is_pointer_v<T> )
 	if constexpr (std::is_pointer_v<T>)
 
