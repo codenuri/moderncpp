@@ -21,9 +21,12 @@ template<typename ... Types> void foo(Types ... args)
 	goo(args...);     // goo( E1, E2, E3 )
 
 	goo((++args)...); // goo( ++E1, ++E2, ++E3 )
+//	goo(++args...);   // () 없어도 됩니다.
 
-	goo(hoo(args...)); // ??? 될까요 ?,
-
+//	goo( hoo(args...) ); // goo( hoo( E1, E2, E3)) 인데.. hoo는 인자가 한개 이므로 error
+						 
+	goo( hoo(args)... ); // goo( hoo(E1), hoo(E2), hoo(E3))
+						 // ok
 
 }
 
