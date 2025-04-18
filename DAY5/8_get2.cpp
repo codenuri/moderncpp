@@ -22,17 +22,16 @@ struct tuple<T, Types...> : public tuple<Types...>
 int main()
 {
 //	tuple<>					  t0;
-//	tuple<             short> t1;	// short  보관
-//	tuple<     double, short> t2;	// double 만 보관
-	tuple<int, double, short> t(1, 3.4, 3); // int 보관
+//	tuple<             short> t1;	// short  보관	 ( 3 )
+//	tuple<     double, short> t2;	// double 만 보관 (3.4)
+	tuple<int, double, short> t(1, 3.4, 3); // int 보관  ( 1)
 
 
-	std::cout << t.value << std::endl; // ??
+	std::cout << t.value << std::endl; // 1
 
+	std::cout << static_cast<tuple<double, short>&>(t).value << std::endl; // 3.4
 
-	std::cout << ?   << std::endl; // 3.4
-
-	std::cout << ? << std::endl; // 3
+	std::cout << static_cast<tuple<short>&>(t).value << std::endl; // 3
 
 
 }
