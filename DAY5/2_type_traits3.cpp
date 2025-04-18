@@ -30,6 +30,12 @@ template<typename T, int N> struct is_array< T[N] >
 	static constexpr int size = N ;
 };
 
+// 크기가 없는 배열도 배열이므로 아래와 같이 별도로 추가
+template<typename T, int N> struct is_array< T[] >
+{
+	static constexpr bool value = true;
+};
+
 
 template<typename T> void foo(T& a)
 {
