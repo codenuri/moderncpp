@@ -16,7 +16,9 @@ void Show(Types ... args)
 	
 	// #2. fold expresson 은 "pack 이름" 뿐 아니라 
 	// "pack 이름을 사용하는 패턴" 도 사용가능
-	( printv(args), ... );
+	( printv(args) , ... );
+	// pack       op ... 
+	// printv(1) , ( printv(2), ( printv(3) ) ) )
 }
 
 int main()
