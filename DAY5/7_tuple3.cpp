@@ -21,7 +21,7 @@ struct tuple<T, Types...>
 int main()
 {
 	tuple<> t0;
-	tuple<short> t1;
-	tuple<double, short> t2;
-	tuple<int, double, short> t3;
+	tuple<short> t1;				// short  보관
+	tuple<double, short> t2;		// double 만 보관
+	tuple<int, double, short> t3;	// int    만 보관
 }
