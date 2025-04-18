@@ -10,8 +10,8 @@
 // 조건이 fasle라면 : ::type 없음
 
 
-//std::enable_if< std::is_integral_v<T>, void>::type
-// => T가 정수라면       : void
+//std::enable_if< std::is_integral_v<T>, T>::type
+// => T가 정수라면       : T
 // => T가 정수가 아니면  : ::type 없음 => 함수 생성실패
 //							SFINAE 에 따라 에러 아니고, 후보 제외
 
@@ -23,23 +23,15 @@
 
 template<typename T> 
 
-typename std::enable_if< std::is_integral_v<T>, void>::type
+//typename std::enable_if< std::is_integral_v<T>, T>::type
+
+std::enable_if_t< std::is_integral_v<T>, T>
 
 
 gcd(T a, T b)
 {
 	return 0;
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
