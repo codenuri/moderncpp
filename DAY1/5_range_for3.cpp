@@ -4,6 +4,11 @@
 struct Point3D
 {
 	int x, y, z;
+
+	// 어떤 타입을 range-for 에 넣으려면
+	// begin()/end() 가 멤버 함수 또는 일반함수로 제공하면 됩니다.
+	int* begin() { return &x; }			// 1번째 요소의 주소(반복자는 결국 포인터와 유사)
+	int* end()   { return &z + 1; }		// 마지막 요소의 다음 주소.
 };
 
 int main()
