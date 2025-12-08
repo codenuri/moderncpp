@@ -1,6 +1,8 @@
 #include <iostream>
 
 // 6_위임생성자 - 24page
+// => 하나의 생성자에서 다른 생성자를 호출하는 문법
+
 
 class Point
 {
@@ -27,3 +29,29 @@ int main()
 
 }
 
+// 생성자에서 다른 생성자 호출이 왜 어려운 주제인가 ?
+// godbolt.org 에 아래 코드 만들어 보세요
+#include <new>
+class Data
+{
+public:
+	Data() {}
+};
+
+class Sample
+{
+	Data data;
+public:
+	Sample() 
+	{
+	}
+	Sample(int a) 
+	{
+	}
+};
+int main()
+{
+	Sample s1;
+	Sample s2(0);
+
+}
