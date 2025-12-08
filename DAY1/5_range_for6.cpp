@@ -13,6 +13,7 @@ int main()
 
 	std::ranges::enumerate_view ev(v);
 
+	/*
 	for (auto tp : ev)
 	{
 		// tp 는 tuple 입니다.
@@ -21,7 +22,12 @@ int main()
 
 		std::cout << idx << " : " << value << std::endl;		
 	}
-
+	*/
+	// 아래 처럼하면 편리합니다 - 오후에 배우는 문법
+	for (auto [idx, value] : ev)
+	{
+		std::cout << idx << " : " << value << std::endl;
+	}
 
 }
 
