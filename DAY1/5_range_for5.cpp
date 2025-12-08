@@ -8,12 +8,14 @@ int main()
 {
 	std::vector<int> v = { 1,2,3,4,5 };
 
-	std::ranges::take_view tv(v, 3); 
+	std::ranges::take_view tv(v, 4); 
+//	std::ranges::reverse_view rv(v);
+	std::ranges::reverse_view rv(tv); // 핵심 : 중첩도 허용  => 4 ,3, 2, 1
+	std::ranges::filter_view fv(rv, [](int n) { return n % 2 == 0; }); //4, 2
 
 	v[0] = 100;
 
-	//for (auto& n : v)
-	for (auto& n : tv)
+	for (auto& n : rv)
 	{
 		std::cout << n << std::endl;
 	}
