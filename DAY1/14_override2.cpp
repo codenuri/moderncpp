@@ -8,7 +8,8 @@ template<typename T>
 class Base
 {
 public:
-	virtual void foo(const T p)
+//	virtual void foo(const T p) // 이렇게 하지 말고
+	virtual void foo(T const p) // 이렇게 했다면 아래 override 가 쉬게 보이지 않을까 ?
 	{
 		std::cout << "Base foo\n";
 	}
