@@ -1,4 +1,4 @@
-#include <iostrem>
+#include <iostream>
 
 // C++11 부터 "리터럴 접미사"를 개발자가 만들수 있는 문법 도입
 
@@ -9,9 +9,10 @@ public:
 	Meter(int n) : value(n) {}
 };
 
-Meter operator""m(int n)
+// 정수형 리터럴 뒤에 붙이는 접미사는 반드시 unsigned long long 으로 해야 합니다.
+Meter operator""m(unsigned long long n)
 {
-	Meter meter(n);
+	Meter meter( static_cast<int>(n) );
 	return meter;
 }
 
