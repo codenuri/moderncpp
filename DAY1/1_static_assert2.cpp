@@ -1,7 +1,7 @@
 #include <iostream>
 #include <type_traits> 
 
-//#pragma pack(1)	// 구조체 align 을 1로 해달라는 것
+#pragma pack(1)	// 구조체 align 을 1로 해달라는 것
 struct PACKET
 {
 	char cmd;
@@ -25,6 +25,7 @@ template<typename T> void object_set_zero(T* p)
 {
 	// 가상함수를 가진 타입의 객체는 절대 memset 하면 안됩니다.
 	// std::is_polymorphic_v<T> : T 가 가상함수를 가진 경우 true
+	//							 "type trait" 배울때 자세히 설명
 
 	static_assert(!std::is_polymorphic_v<T>, 
 					"error T has virtual function");
@@ -35,6 +36,9 @@ template<typename T> void object_set_zero(T* p)
 class AAA
 {
 	int data;
+
+public:
+	virtual void foo() {}
 };
 
 int main()
