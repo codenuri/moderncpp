@@ -19,11 +19,13 @@ public:
 	// => MyList 객체 생성시 std::list 와 동일한 방법으로 사용가능.
 	using std::list<int>::list;
 };
-
 int main()
 {
 	MyList st1(10, 3); 
 	MyList st2(10);
+
+	st1.print();
+	st2.print();
 }
 
 
