@@ -10,6 +10,12 @@
 // => 실행시간에도 사용가능. 
 constexpr int Factorial(int n)
 {
+	// constexpr function 내부에서는 
+	// => 반드시 컴파일 시간에 할수 있는 것만 작성해야 합니다.
+	// => 메모리 할당, 파일 입출력, 모두 안됩니다.
+	// => 아래와 같은 화면 출력 코드도 만들수 없습니다.
+	std::cout << "AA\n";
+
 	return n == 1 ? 1 : n * Factorial(n - 1);
 }
 
@@ -36,3 +42,6 @@ int main()
 
 	constexpr int s5 = Factorial(5); // 반드시 컴파일 할때 실행해 달라는 의미. 
 }
+
+// 위 코드 모두 복사해서
+// => godbolt.org 왼쪽에 복사해 넣으세요
