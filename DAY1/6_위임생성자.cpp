@@ -31,6 +31,7 @@ int main()
 
 // 생성자에서 다른 생성자 호출이 왜 어려운 주제인가 ?
 // godbolt.org 에 아래 코드 만들어 보세요
+/*
 #include <new>
 class Data
 {
@@ -44,9 +45,14 @@ class Sample
 public:
 	Sample() 
 	{
+		// Data 생성자 호출
+		// 만일 여기서 비공식적인 방법으로 Sample(int) 를 호출하면
+		// => 결국 Data 생성자는 2회 호출.. 잘못된 동작!!!!
+		// => 반드시 언어가 제공하는 방법만 사용해야 합니다.
 	}
 	Sample(int a) 
 	{
+		// Data 생성자 호출
 	}
 };
 int main()
@@ -55,3 +61,4 @@ int main()
 	Sample s2(0);
 
 }
+*/
