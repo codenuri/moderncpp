@@ -15,10 +15,15 @@ int main()
 	const int c2 = n;  
 	constexpr int c3 = 10;
 	
-	int arr1[10]; 
-	int arr2[n ]; 
-	int arr3[c2]; 
-	int arr4[c3]; 
-	int arr5[c1];
+	int arr1[10]; // ok
+	int arr2[n ]; // error. 배열크기로 변수 안됨
+					
+	int arr3[c2];	// error. readonly 가 필요한 것이 아니라.
+					// 배열의 크기는 "컴파일 시간에 알아야 한다"
+					// 즉, 컴파일 시간 상수가 필요
+	int arr4[c3];	// ok
+	int arr5[c1];	// ok. const 이지만, 초기값이 literal 이므로
+					// C/C++ 컴파일러가 컴파일 시간 상수로 취급.
+					// 그럼?? constexpr이 없어도 되지 않나요 ? 다음예제..
 
 }
