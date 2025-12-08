@@ -15,15 +15,17 @@ class take_view
 public:
 	take_view(T& r, int c) : rng(r), cnt(c) {}
 
-	auto begin() { return r.begin(); }
-	auto end()   { return r.end() + cnt; }
+	auto begin() { return rng.begin(); }		// vector 의 begin()
+	auto end()   { return rng.begin() + cnt; }	// vector 의 begin() + cnt(3) 의 위치
 };
 
 int main()
 {
 	std::vector<int> v = { 1,2,3,4,5 };
 	
-	take_view tv(v, 3);
+	take_view tv(v, 3); // 이 순간 데이타 복사본을 만드는 것은 아님
+
+	v[0] = 100;
 
 	//for (auto& n : v)
 	for (auto& n : tv)
