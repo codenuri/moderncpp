@@ -1,5 +1,9 @@
 #include <iostream>
 
+// 아래 2줄은 완전히 동일합니다.
+const int c1 = 10; // 널리 사용되는 코드
+int const c2 = 10; // 미국의 유명개발자들이 좋다고 주장하는 코드
+
 template<typename T>
 class Base
 {
