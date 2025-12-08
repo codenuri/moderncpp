@@ -1,7 +1,7 @@
 #include <iostream>
 #include <type_traits> 
 
-#pragma pack(1)	// 구조체 align 을 1로 해달라는 것
+//#pragma pack(1)	// 구조체 align 을 1로 해달라는 것
 struct PACKET
 {
 	char cmd;
@@ -12,16 +12,27 @@ struct PACKET
 
 static_assert(sizeof(PACKET) == sizeof(char) + sizeof(int),
 			  "error, unexpected padding");
-
+/*
 int main()
 {
 	std::cout << sizeof(PACKET) << std::endl; // ?
 }
-
+*/
 
 
 
 template<typename T> void object_set_zero(T* p)
 {
 	memset(p, 0, sizeof(T)); 
+}
+
+class AAA
+{
+	int data;
+};
+
+int main()
+{
+	AAA aaa;
+	object_set_zero(&aaa);
 }
