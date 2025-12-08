@@ -17,8 +17,8 @@ int main()
 
 	// #2. C++11 스타일, auto 사용
 	// => 단, 아래 코드도 v 가 컨테이너가 아닌 raw array 라면???
-	auto p3 = v.begin();
-	auto p4 = v.end();
+//	auto p3 = v.begin();
+//	auto p4 = v.end();
 
 	// #3. C++11 에 추가된 또다른 개념. 
 	// => 멤버 함신 대신 일반함수
