@@ -10,10 +10,8 @@ typedef std::unordered_set<T> SET<T>;  // 이렇게!!
 
 // typedef     : 타입에 대한 별명만 가능하다.
 // C++11 using : 타입 별명 + 템플릿 별명  모두 가능.
-
 template<typename T>
 using SET = std::unordered_set<T>;
-
 
 int main()
 {
@@ -22,4 +20,7 @@ int main()
 
 	SETI s1;
 	SETD s2;
+
+	SET<int> s3;
+	SET<double> s4;
 }
