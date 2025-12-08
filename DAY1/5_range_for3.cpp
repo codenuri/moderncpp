@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
-
+// 아래 코드는 Point3D 의 모든 요소가
+// 동일타입의 연속된 메모리 라는 조건을 만족할때만 사용가능.
 struct Point3D
 {
 	int x, y, z;
