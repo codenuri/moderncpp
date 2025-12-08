@@ -4,7 +4,7 @@ template<typename T>
 class Base
 {
 public:
-	virtual void foo(const T* p)
+	virtual void foo(const T p)
 	{
 		std::cout << "Base foo\n";
 	}
@@ -13,6 +13,7 @@ public:
 class Derived : public Base<int*>
 {
 public:
+	// foo() 가상함수 재정의 하세요. - override 키워드 사용하지 말고 해보세요
 };
 int main()
 {
