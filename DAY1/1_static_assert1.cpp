@@ -24,3 +24,13 @@ int main()
 {
 	// 64bit 환경에서만 동작가능한 코드
 }
+
+// 참고 C assert
+/*
+#ifdef _DEBUG
+#define assert(x)  if ( x != false) { .....; abort(); };
+
+#else 
+#define assert(x)
+#endif
+*/
