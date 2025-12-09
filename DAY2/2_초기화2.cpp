@@ -10,6 +10,7 @@ int main()
 
 	// C++11 uniform initialization 이라고 합니다.
 	// => 모든 변수를 동일한 하나의 방법으로 초기화 할수 있다
+	// => 흔히 "중괄호 초기화(brace-init)" 이라고 합니다.
 	int n2 = { 10 };
 	int x2[2] = { 1,2 };
 	std::complex<double> c2 = { 1, 2 };
