@@ -6,8 +6,11 @@ template<typename T> void foo(T a)
 {
 	// T 의 타입을 확인하는 방법	
 	// #1. 함수의 이름 출력
-	// __func__ : 함수의 이름을 담은 C++ 표준 매크로
-	std::cout << __func__ << std::endl;
+	// __func__ : 함수의 이름을 담은 C++ 표준 매크로(이름만 가진다)
+	// __FUNCSIG__ : 함수이름 + 함수 인자 모양(모든 signature 출력)
+	// std::cout << __func__ << std::endl;
+
+	std::cout << __FUNCSIG__ << std::endl;
 
 }
 int main()
