@@ -9,6 +9,11 @@ public:
 	// => 직접 초기화만 사용가능하고, 복사 초기화는 사용할수 없다.
 	// => 아래 main 에서 "copy initialization" 부분은 모두 에러.
 	explicit Vector(int s) : sz(s) {}
+
+	// copy initialization vs direct initialization
+	// => C++98 시절에는 차이점이 많았지만(내일 move 배운후 설명)
+	// => C++11 이후는 유일한 차이점은 "생성자가 explicit" 일때
+	//    direct 만 가능, copy 는 에러. 
 };
 
 void foo(Vector v) {} 				  
