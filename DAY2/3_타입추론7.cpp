@@ -17,7 +17,7 @@ int main()
 
 	// 즉, 배열을 auto 변수에 담으면
 	// auto  a1 = x; // 이때 auto 는 int*
-	// auto& a2 = x; // 이때 auto 는 int[3]
+	// auto& a2 = x; // 이때 auto 는 int[3],  a2 : int(&)[3]
 
 
 
