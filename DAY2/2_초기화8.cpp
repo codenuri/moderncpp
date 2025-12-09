@@ -6,6 +6,9 @@
 
 void foo(std::initializer_list<int> e)
 {
+	for (auto n : e)
+	{
+	}
 }
 
 int main()
@@ -38,7 +41,7 @@ int main()
 	// 아래 처럼 전달 가능
 	foo({ 1,2,3 });
 	foo({ 1,2,3, 4 });
-	foo({ 1,2,3, 4,5 });
+	foo({ 1,2,3, 4,5 }); // 5개를 메모리에 만들고, 주소(+갯수)를 보낸것
 }
 
 
