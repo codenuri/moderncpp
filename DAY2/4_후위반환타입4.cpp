@@ -1,0 +1,24 @@
+#include <iostream>
+// ? 를 표기할수가 없었습니다.
+// => 그래서 만든것이 decltype() 입니다.
+/*
+template<typename T1, typename T2>
+? Mul(T1 a, T2 b)
+{
+	return a * b;
+}
+*/
+
+// decltype(a * b) : a* b 를 했을때의 타입을 조사해 달라.
+// => 그런데, 아래 코드는 에러 ?? 왜 에러일까요 ?
+template<typename T1, typename T2>
+decltype(a * b) Mul(T1 a, T2 b)
+{
+	return a * b;
+}
+
+int main()
+{
+	std::cout << Mul(3, 4.1)   << std::endl;	
+}
+
