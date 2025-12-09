@@ -44,7 +44,23 @@ int main()
 // 언제 temporary 가 생성되는지 이해해야 하고( Counter 예제 )
 // => 버그가 나지 않게 적절히 & 리턴 활용해야 합니다.
 
+// 참조 반환 하는 경우
+// => 파괴되지 않는 것만 가능합니다.
+// => return *this
+// => return 멤버변수
+// => return 참조 인자로 받은것을 다시 반환
+// => "return 지역변수" => 는 절대 안됨
 
+class Sample
+{
+public:
+	int data = 0;
+	
+	int& get() 
+	{
+		return data; // ok
+	}
+}
 
 
 
