@@ -19,7 +19,26 @@ int main()
 	std::initializer_list<int> e = { 1,2,3,4,5 };
 
 	// 이후 e 를 사용하는 방법은 
-	// => STL 의 반복자 처럼 사용
+	// => STL 처럼 반복자 를 꺼내서 사용
+	// => 3개의 멤버함수만 제공(size(), begin(), end())
+
+	auto first = e.begin();
+	auto last = e.end();
+
+	// 읽기만 가능. 쓰기 안됨
+	//*first = 20; // error
+
+	// 반복자가 있으므로 range-for 가능
+	for (auto n : e)
+	{
+
+	}
+
+	// 함수가 std::initializer_list 를 인자로 받으면
+	// 아래 처럼 전달 가능
+	foo({ 1,2,3 });
+	foo({ 1,2,3, 4 });
+	foo({ 1,2,3, 4,5 });
 }
 
 
