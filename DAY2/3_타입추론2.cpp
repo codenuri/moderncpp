@@ -20,6 +20,10 @@ template<typename T> void foo(T a)
 	// => 타입이 가진, const, reference 를 출력하지 못합니다.
 	std::cout << typeid(T).name() << std::endl;
 
+
+	// #4. 예전에 사용하던 방식(godbolt.org가 없던 시절)
+	// => 일부로 에러는 내서, 에러 메세지 확인
+	//*a = 10;
 }
 
 
