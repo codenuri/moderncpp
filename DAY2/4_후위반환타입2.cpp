@@ -5,10 +5,19 @@
 void goo(int a) {}
 
 // 아래 ? 채우세요
-? foo()
+// 1. goo의 함수 포인터 변수를 만드세요
+// 2. 변수위치에 "변수이름대신 foo()" 넣으세요
+// => 그런데, 너무 복잡합니다.
+void(* foo() )(int)
 {
     return &goo;
 }
+// 후위 반환 타입으로 하면 쉽습니다.
+auto hoo() -> void(*)(int)
+{
+    return &goo;
+}
+
 
 int main()
 {
