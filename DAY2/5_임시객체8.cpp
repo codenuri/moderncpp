@@ -1,4 +1,5 @@
 #include <iostream>
+#include <vector>
 
 template<typename T>
 class Vector
@@ -22,7 +23,9 @@ public:
 
 int main()
 {
-	Vector<int> v(5); // 5개 크기 vector 
+//	Vector<int> v(5); // 5개 크기 vector 
+
+	std::vector<int> v(5);
 
 	v.at(2) = 0;  
 	v.at(3) = 0; 
