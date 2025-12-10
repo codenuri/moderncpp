@@ -36,6 +36,9 @@ int main()
 				// => <> 안에 && 가 있으면 타입 캐스팅이 아닙니다.
 				// => value casting 입니다.
 				// => lvalue => rvalue 로 바꾸는 캐스팅
+
+//	foo(int&) : int& 타입을 받겠다는 것이 아니라 lvalue 받겠다는것
+//	foo(int&&) : int&& 타입을 받겠다는 것이 아니라 rvalue 받겠다는것
 }
 
 
