@@ -42,6 +42,17 @@ int main()
 	std::cout << s1 << std::endl; // "kim"
 	std::cout << s2 << std::endl; // ""
 
+
+	std::string s3 = "kim";
+	std::string s4 = "lee";
+
+	std::vector<std::string> v;
+	v.push_back(s3);
+	v.push_back(s4);
+
+	std::cout << s3 << std::endl; // "kim"
+	std::cout << s4 << std::endl; // ""
+
 }
 
 
