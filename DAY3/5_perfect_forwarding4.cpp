@@ -29,7 +29,15 @@ void chronometry(F f, int&& arg)
 template<typename F, typename T>
 void chronometry(F f, T&& arg)
 {
+	// 아래 캐스팅은 rvalue 캐스팅 이다 ? 아니다
+	// static_cast<int&&> : 이게 rvalue casting, 아래 코드는 int 가 아닌 T
+
 	f(static_cast<T&&>(arg));
+
+	// static_cast<T&&>(arg) 의미
+	// chronometry 인자로
+	// rvalue 를 전달하면 (받으면서 lvalue 로 변하는데) 이것을 다시 rvalue 캐스팅 한것
+	// lvalue 를 전달하면 (필요 없는 캐스팅이지만 자동생성된 코드가) lvalue 캐스팅 한것
 }
 
 
@@ -37,11 +45,11 @@ int main()
 {
 	int n = 10;
 
-	chronometry(foo, 10); // T = ?    T&& = ?
-						  // static_cast<?>(arg)
+	chronometry(foo, 10); // T = int    T&& = int&&
+						  // static_cast<int&&>(arg)
 
-	chronometry(goo, n);  // T = ?    T&& = ?
-						  // static_cast<?>(arg)
+	chronometry(goo, n);  // T = int&   T&& = int& && => int&
+						  // static_cast<int&>(arg)
 
 	std::cout << n << std::endl;
 }
