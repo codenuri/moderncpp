@@ -49,7 +49,14 @@ int main()
 							  // => move 할때 설명
 }
 
+//				lvalue			rvalue
 
+// C++98		lvalue			rvalue				=> 2개만 존재
+// C++11이후 	lvalue			prvalue, xvalue		=> 3개로 확장
+//										 
+
+// prvalue(pure rvalue) : 기존의 있던 rvalue 
+// xvalue(expire value) : move 를 사용하는 경우. 아직 등장안함. move이후
 
 
 
