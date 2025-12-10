@@ -43,13 +43,28 @@ int main()
 {
 	Vector<Point> v;
 
-	Point pt{ 1,1 };
+//	Point pt{ 1,1 };
 //	v.push_back(pt);
 //	v.push_back(std::move(pt));
 
-	v.emplace_back(1, 1);
+//	v.emplace_back(1, 1);
 			// 1, 1 을 emplace_back 이 받게 되지만
 			// 결국 2개의 인자는 다시 Point 생성자에 전달
 			// new Point(1,1)
 			// 1, 1 ====> emplace_back() ====> Point(int a, int b)
 }
+
+// #1. 컨테이너가 primitive 타입을 보관할때
+// ex) vector<int> v;
+// => v.push_back(3);		// ok. good. 가독성이 좋다
+// => v.emplace_back(3);	// ok. good.
+
+// #2. 컨테이너가 user type 의 포인터를 보관할때
+// ex) vector<Point*> v;
+// => Point* 는 결국 primitive 타입의 개념!!
+// => push_back() 권장
+
+// #3. 컨테이너가 user type 을 값으로 보관할때
+// vector<Point> v;
+// => v.push_back( Point{1,1}); // 이 코드 보다는
+// => v.emplace_back( 1,1);     // 이 코드가 빠르다.
