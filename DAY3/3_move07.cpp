@@ -37,7 +37,13 @@ public:
 
 		return *this;
 	}
-	Cat(Cat&& c) : name{ c.name }, age{ c.age }, address{ addr }
+
+	// move 생성자나 move 대입연산자를 직접 만들게 된다면
+	// => 멤버 데이타중, 사용자 정의 타입이 있으면
+	// => 옮길때 std::move() 로 옮겨야 한다.
+	// => move 생성자에서는 멤버를 std::move() 로 옮겨라!
+
+	Cat(Cat&& c) : name{ c.name }, age{ c.age }, address{ std::move(addr) }
 	{
 		c.name = nullptr;
 	}
@@ -47,7 +53,7 @@ public:
 			return *this;
 
 		age = c.age;
-		address = c.address;
+		address = std::move(c.address);
 		delete[] name;
 
 		name = c.name;
