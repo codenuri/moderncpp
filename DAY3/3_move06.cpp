@@ -15,6 +15,9 @@
 // => 이동 생성자, 이동 대입연산자
 
 
+// rule of 0
+// => 아무것도 만들지 말라
+// => 최선의 코드
 
 class Cat
 {
@@ -47,7 +50,6 @@ public:
 
 		return *this;
 	}
-
 	Cat(Cat&& c) : name{ c.name }, age { c.age }
 	{
 		c.name = nullptr;
