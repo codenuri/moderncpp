@@ -30,10 +30,11 @@ public:
 	// => 완벽한 전달 기술밖에 없습니다.
 	// => 이 기술이 없으면 만들수 없습니다.
 	// => 그래서, emplace_back() 은 C++11 에서 등장
-	template<typename A>
-	void emplace_back(A&& arg)
+	template<typename ... A>
+	void emplace_back(A&& ... arg)
 	{
-		buffer = new T{ std::forward<A>(arg) };
+		// 전달 받은 인자를 T의 생성자로 다시 forwarding
+		buffer = new T{ std::forward<A>(arg)... };
 	}
 	
 };
@@ -43,8 +44,8 @@ int main()
 	Vector<Point> v;
 
 	Point pt{ 1,1 };
-	v.push_back(pt);
-	v.push_back(std::move(pt));
+//	v.push_back(pt);
+//	v.push_back(std::move(pt));
 
 	v.emplace_back(1, 1);
 			// 1, 1 을 emplace_back 이 받게 되지만
