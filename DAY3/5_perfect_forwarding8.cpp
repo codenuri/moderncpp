@@ -50,3 +50,10 @@ int main()
 
 	std::cout << n << std::endl;
 }
+
+// rust는 하나의 reference 로 lvalue, rvalue 모두 가리킵니다.
+// => 그래서 완벽한 전달이 훨씬 쉬워 집니다.
+
+// C++ 은 move 를 만들기 위해 lvalue, rvalue 를 구분..
+// rust 는 move 를 컴파일 시간에 컴파일러가 해결하기로!!
+// => 그래서 C++보다 단순. 
