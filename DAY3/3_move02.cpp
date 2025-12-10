@@ -27,6 +27,7 @@ public:
 	// => 그래서, 컴파일러가 만들어 주는 복사 생성자의 모양은
 	//    아래와 같이 const lvalue reference 사용!!
 	// => 아래 코드가 정확한 코드
+	// => 아래 코드는 안만들어도, 컴파일러가 제공합니다.
 	Point(const Point& pt) : x{ pt.x }, y{ pt.y } {}
 };
 
