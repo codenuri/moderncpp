@@ -1,5 +1,6 @@
 // std::move()소개
 #include <iostream>
+#include <cstring>
 
 class Cat
 {
@@ -48,6 +49,8 @@ int main()
 // => 컴파일러 최적화 때문에 나타나는 현상
 
 
+// g++ 로 컴파일 하면서 "생성자 호출을 제거하는 최적화"를 하지 말라는 옵션사용
+// g++ 소스이름.cpp -fno-elide-constructors
 
 
 
