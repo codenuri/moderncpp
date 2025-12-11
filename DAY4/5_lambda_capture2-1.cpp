@@ -8,6 +8,10 @@ int main()
 	// => operator() 함수를 만들때 "const 함수로 하지 말라" 는 의미
 	auto f1 = [v1, v2](int a) mutable { v1 = 200; return a + v1 + v2; };
 
+	f1(5); // v1 = 200 을 실행하게 되지만, main v1의 복사본이 변경된것!!!
+
+	std::cout << v1 << std::endl; // 10  
+
 	//--------------------------------------------------------
 	/*
 	class CompilerGeneratedName
