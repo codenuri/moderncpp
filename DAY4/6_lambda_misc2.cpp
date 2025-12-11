@@ -15,8 +15,8 @@ int main()
 	auto f2 = [](auto a, auto b) { return a + b; };
 
 	int    n = f2(1, 2);			// ok. 결과는 3
-	double d = f2(3.2, 3.2);		// ok. 결과는 6.4
-	double d = f2(3,   3.2);		// ok. 6.2
+	double d1 = f2(3.2, 3.2);		// ok. 결과는 6.4
+	double d2 = f2(3,   3.2);		// ok. 6.2
 
 }
 
