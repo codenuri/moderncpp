@@ -23,7 +23,10 @@ int main()
 //	chronometry(foo, 10); // error
 
 	// 힌트를 주세요
-	chronometry(static_cast<void(*)(int)>(foo), 10); // error
+	chronometry(static_cast<void(*)(int)>(&foo), 10); // error
+
+	auto p1 = &foo; // error
+	auto p1 = static_cast<void(*)(int)>(&foo); // ok
 }
 
 
