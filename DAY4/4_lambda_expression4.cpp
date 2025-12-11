@@ -22,6 +22,8 @@ int main()
 	auto f3 = [](int a, int b) { return a + b; };
 
 	f3 = [](int a, int b) { return a + b; }; // error
+							// 타입이 다르다..
+							// f3 는 초기화 이후 변경할수 없다.
 }
 
 
