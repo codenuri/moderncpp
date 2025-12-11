@@ -34,3 +34,18 @@ int main()
 
 
 
+// C++
+// 일반 함수 : 자신만의 타입 없음
+// 함수 객체 : 모든 함수 객체는 다른 타입
+
+// Rust
+// 일반 함수 : 모든 함수는 다른 타입
+//           단, signature 가 동일한 함수는 함수 포인터로 변환 가능
+/*
+// 아래 코드가 rust 라면
+sort(x, x + 10, cmp1); // 인라인 치환됨
+sort(x, x + 10, cmp2); // sort() 2개 생성
+
+sort(x, x + 10, cmp1 as fn(int, int)->bool); // 인라인 치환 안됨
+sort(x, x + 10, cmp2 as fn(int, int)->bool); // sort() 한개
+*/
