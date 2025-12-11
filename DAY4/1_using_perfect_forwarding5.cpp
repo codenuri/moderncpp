@@ -11,8 +11,9 @@ private:
 	std::string name;
 	std::string address;
 public:
-	People(const std::string& n, const std::string& a)
-		: name{ n }, address{ a }
+	template<typename T1, typename T2>
+	People(T1&& n, T2&& a)
+		: name{ std::forward<T1>(n) }, address{ std::forward<T2>(a) }
 	{
 	}
 
@@ -21,7 +22,7 @@ public:
 	// forwarding reference 로 하면 자동 생성
 
 	template<typename T1, typename T2>
-	void set(T1&& n, T&& a)
+	void set(T1&& n, T2&& a)
 	{
 		name = std::forward<T1>(n);
 		address = std::forward<T2>(a);
@@ -33,7 +34,8 @@ int main()
 	std::string name = "kim";
 	std::string addr = "seoul";
 
-	People p;
+	People p(name, std::move(addr));
+
 	p.set(name,			   addr);
 	p.set(std::move(name), addr);
 	p.set(name,			   std::move(addr));
