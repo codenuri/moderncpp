@@ -10,7 +10,6 @@ decltype(auto) chronometry(F f, T&& arg)  // ok.  위와 동일
 	return f(std::forward<T>(arg));
 }
 
-
 int main()
 {
 	int n = 3;
