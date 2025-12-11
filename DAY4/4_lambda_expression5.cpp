@@ -13,5 +13,8 @@ int main()
 	// #3. 단, return 문장이 2개 이상이고, 서로 다른 타입 반환시는 추론안됨
 	// => 아래 코드 error
 	auto f3 = [](int a, double b) { if (b == 0) return a;  return a + b; };
+
+	// 이때는 반환 타입 표기하면 됩니다.
+	auto f4 = [](int a, double b)->double { if (b == 0) return a;  return a + b; };
 }
 
