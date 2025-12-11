@@ -34,5 +34,5 @@ int main()
 	int x[] = { 1,3,5,7,9,2,4,6,8,10 };
 
 	Less    f1; f1(5, 3); Sort(x, x + 10, f1); // ok
-	Greater f2; f2(5, 3); Sort(x, x + 10, f2); // ?
+	Greater f2; f2(5, 3); Sort(x, x + 10, f2); // ok
 }
