@@ -17,11 +17,19 @@ public:
 	}
 	int operator()()
 	{
-		return rand() % 10;
+		int k = 0;
+
+		while (!bs.test(k = rand() % 10));
+
+		bs.reset(k);
+
+		return k;
 	}
 };
 
 URandom urand; // urand 는 객체 지만 함수 처럼 사용가능합니다.
+
+
 
 
 int main()
