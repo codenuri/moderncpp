@@ -28,13 +28,13 @@ int main()
 	std::vector<int(*)(int, int)> v1; // 가능하지만 권장 안함
 								     // 캡쳐한 람다 보관안됨.
 
-	std::vector<std::function<int(int, int)> > v2; // ok. 최선의 방법
+	std::vector< std::function<int(int, int)> > v2; // ok. 최선의 방법
 													// 캡쳐한 람다도 가능.
-	v1.push_back([](int a, int b) { return a + b};);
-	v1.push_back([](int a, int b) { return a - b};);
+	v1.push_back([](int a, int b) { return a + b; });
+	v1.push_back([](int a, int b) { return a - b; });
 
-	v2.push_back([](int a, int b) { return a + b};);
-	v2.push_back([](int a, int b) { return a - b};);
+	v2.push_back([](int a, int b) { return a + b; });
+	v2.push_back([](int a, int b) { return a - b; });
 
 	int n1 = v1[0](1, 2);
 	int n2 = v2[0](1, 2);
