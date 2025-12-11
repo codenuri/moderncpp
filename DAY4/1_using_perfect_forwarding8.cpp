@@ -29,3 +29,11 @@ int main()
 	t.goo(n); // ok
 	t.goo(10); // ok
 }
+// effective-c++, 
+// more effective-c++,  
+// effective-modern C++
+
+
+
+
+
