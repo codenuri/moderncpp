@@ -10,6 +10,15 @@ int main()
 	// 지역변수 캡쳐의 원리
 	// => 컴파일러가 아래 코드를 만드는 것
 
+	class CompilerGeneratedName
+	{
+	public:
+		inline auto operator()(int a) const
+		{
+
+		}
+	};
+	auto f1 = CompilerGeneratedName{};
 }
 
 
