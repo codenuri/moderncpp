@@ -50,6 +50,12 @@ struct tuple_element<0, tuple<Types...> >
 	// 역시 못 구함. 잘못된 부분 특수화
 };
 */
+
+// 핵심
+// 1. N == 0 인 경우로 고정하고
+// 2. TP 라는 타입에서 tuple 의 0번째 요소가 코드에 나타나도록
+//   tuple<T, Types...> 으로 부분 특수화
+
 template<typename T, typename ... Types>
 struct tuple_element<0, tuple<T, Types...> >
 {
