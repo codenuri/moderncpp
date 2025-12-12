@@ -1,7 +1,7 @@
 // Step3. 모든 요소 보관하기 
 
 template<typename ... Types>
-class tuple
+struct tuple
 {
 	static constexpr int N = 0;
 };

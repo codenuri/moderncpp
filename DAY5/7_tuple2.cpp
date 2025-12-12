@@ -1,7 +1,7 @@
 ﻿// Step1. 가변인자 템플릿 사용
 
 template<typename ... Types>
-class tuple
+struct tuple
 {
 	static constexpr int N = 0; // 저장하는 요소의 갯수
 };
