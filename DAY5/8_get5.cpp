@@ -57,9 +57,10 @@ template<typename TP>
 void foo(TP& tp)
 {
 	// 현재 TP : tuple<int, double, short>
-	typename tuple_element<1, TP>::tupleType d;
+	typename tuple_element<1, TP>::type e; // 요소의 타입
+	typename tuple_element<1, TP>::tupleType d; // 요소를 보관하는 tuple(부모)타입
 
-	std::cout << typeid(d).name() << std::endl;
+	std::cout << typeid(d).name() << std::endl; // tuple<double, short>
 }
 
 
