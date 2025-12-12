@@ -30,9 +30,9 @@ int main()
 	tuple<int, double, short> t{ 1, 3.4, 'A' };
 
 	// 아래 ? 채우세요
-	std::cout << t.value << std::endl; // ??
+	std::cout << t.value << std::endl; // 1
 
-	std::cout << ? << std::endl; // 3.4
+	std::cout << static_cast<tuple<double, short>&>(t).value << std::endl; // 3.4
 
-	std::cout << ? << std::endl; // 'A'
+	std::cout << static_cast<tuple<short>&>(t).value << std::endl; // 'A'
 }
