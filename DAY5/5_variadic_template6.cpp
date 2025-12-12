@@ -9,6 +9,9 @@
 template<typename T, typename ... Types>
 void foo(T value, Types ... args)
 {
+	static int n = 0;
+	++n;
+
 	std::cout << value << std::endl;
 
 	// 아래 if constexpr 은 C++17 부터 사용가능.
@@ -24,6 +27,10 @@ int main()
 	foo(1, 3.4, 'A'); 
 }
 
+// 위 코드는 재귀 호출 아닙니다.
+// main() => foo(int, double, char) => foo(double, char) => foo(char)
+// => 따라서, 크기가 큰 함수는 절대 사용하지 마세요
+// => 간단하고 인라인 치환되어서 실제 함수는 사라지는 경우에 널리 사용
 
 
 
