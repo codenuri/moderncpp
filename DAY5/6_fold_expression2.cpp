@@ -17,7 +17,11 @@ void Show(Types ... args)
 	// 핵심 : fold expression  도 "pack 이름" 뿐 아니라 
 	//		 "pack 을 사용하는 패턴" 도 적용가능
 	
-	(printv(args), ...);  // 이항연산자가 뭘까요 ?
+	(printv(args) , ...);  // 이항연산자가 뭘까요 ?
+	// pack      op ...  : printv(1), ( printv(2), ( printv(3), ( ... )))))
+
+
+	((std::cout << args)...)
 
 }
 
