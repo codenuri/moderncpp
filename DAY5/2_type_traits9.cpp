@@ -37,3 +37,8 @@ int main()
 	Object o4 = mymove(o2);	// T = Object&,  T&& = Object&
 	Object o5 = mymove(Object{});
 }
+
+// type trait 기술
+
+// 질의(is_xxx) : 아주 널리 사용되고, 일반 개발자도 알아야 합니다.
+// 변형 타입얻기 : 일반개발자 보다는 라이브러리 설계자들이 많이 사용 - std::move 만들기등
