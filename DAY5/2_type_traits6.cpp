@@ -20,6 +20,7 @@ template<typename T> void foo(T a)
 	typename std::remove_pointer<T>::type n1;	// C++11
 
 	std::remove_pointer_t<T> n2; // 위와 완전히 동일	// C++14
+
 }
 
 
