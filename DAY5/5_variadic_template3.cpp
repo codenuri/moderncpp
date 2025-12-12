@@ -29,7 +29,7 @@ template<typename ... Types> void foo(Types ... args)
 						// 그런데 hoo() 는 인자 한개..
 						// error
 
-	? ; // ok.  goo(hoo(E1), hoo(E2), hoo(E3)) 
+	goo(hoo(args)...); // ok.  goo(hoo(E1), hoo(E2), hoo(E3)) 
 
 }
 
