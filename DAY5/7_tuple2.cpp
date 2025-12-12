@@ -3,7 +3,7 @@
 template<typename ... Types>
 class tuple
 {
-
+	static constexpr int N = 0; // 저장하는 요소의 갯수
 };
 
 int main()
