@@ -21,8 +21,12 @@ void Show(Types ... args)
 	// pack      op ...  : printv(1), ( printv(2), ( printv(3), ( ... )))))
 
 
-	((std::cout << args)...)
+	(std::cout << ... << args);
+	// 초기값  op ... op pack
 
+	// ((((std::cout  << E1) << E2) << E3) << E4) << E5
+
+	((std::cout << args << " "), ...);
 }
 
 int main()
