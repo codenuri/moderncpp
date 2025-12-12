@@ -1,4 +1,4 @@
-// Step3. 모든 요소 보관하기 
+#include <iostream>
 
 template<typename ... Types>
 struct tuple
